@@ -1,0 +1,76 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+#drawing-area
+{
+	padding-top: 40px;
+	display: inline-block;
+	float: right;
+	right: 20px;
+	position: absolute;
+}
+
+#pend-canvas
+{
+	border: 1px solid black;
+}
+
+#trail-canvas
+{
+	border: 1px solid black;
+}
+
+input[type=submit]
+{
+	border: 1px solid rgba(0,0,0,0.1);
+	background: #f5f5f5;
+  	background: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+	border-radius: 2px;
+	color: #444;
+	cursor: default;
+	font-family: arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 15px 25px;
+	padding: 0 8px;
+	text-align: center;
+	min-width: 100px;
+	height: 29px;
+	line-height: 27px;
+}
+
+input[type=submit]:hover
+{
+	border-color: #c6c6c6;
+  	color: #222;
+  	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,.15);
+  	box-shadow: 0 1px 0 rgba(0,0,0,.15);
+  	background: #f8f8f8;
+  	background: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+}
+input[type=submit]:focus
+{
+	outline: none;
+	border-color: #4D90FE;
+}
+
+form
+{
+	font-family: arial, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.resetform
+{
+	width: 200px;
+	display: inline-block;
+	float: left;
+	padding-top: 40px;
+	margin-top: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+}

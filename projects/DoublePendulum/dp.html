@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title> Double Pendulum Simulation - Chaos Theory</title>
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
+	<script type="text/javascript" src="./scripts/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<div class="resetform">
+	Length 1:
+	<br />
+	<input type="range" id="l1" min="10" max="200" value="80"></input>
+	<br />
+	Length 2:
+	<br />
+	<input type="range" id="l2" min="10" max="200" value="80"></input>
+	<br />
+	Mass 1:
+	<br />
+	<input type="range" id="m1" min="5" max="100" value="10"></input>
+	<br />
+	Mass 2:
+	<br />
+	<input type="range" id="m2" min="5" max="100" value="10"></input>
+	<br />
+	Theta 1:
+	<br />
+	<input type="range" id="theta1" min="0" max="360" value="90"></input>
+	<br />
+	Theta 2:
+	<br />
+	<input type="range" id="theta2"  min="0" max="360" value="145"></input>
+	<br />
+	g:
+	<br />
+	<input type="range" id="g"  min="1" max="20" value="9.8"></input>
+	<br />
+	<input type="submit" value="Reset" id="reset"></input>
+</div>
+<div id="drawing-area">
+<canvas id="pend-canvas" width="500" height="450"></canvas>
+<canvas id="trail-canvas" width="500" height="450"></canvas>
+</div>
+<script type="text/javascript" src="./scripts/double_pendulum.js"></script>
+</body>
+</html>
