@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Travelling Salesman Problem - Simulated Annealing</title>
+	<link rel="stylesheet" type="text/css" href="./styles/main.css" />
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,bold,900' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			jax: ["input/TeX", "output/HTML-CSS"],
+			tex2jax: {
+				inlineMath: [ ['$', '$'] ],
+				displayMath: [ ['$$', '$$']],
+				processEscapes: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+			},
+			messageStyle: "none",
+			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="container">
+			<div class="headline">
+				<h1 class="headline-title">Travelling Salesman Problem
+				<small>Heuristic Solution using Simulated Annealing</small>
+				</h1>
+			</div>
+			<div class="article">
+				<center><h4>What is the Travelling Salesman Problem?</h4></center>
+				The <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">travelling salesman problem</a> states that: Given $n$ cities, what is the shortest path that visits each city exactly once and returns to the origin city? The TSP is one of the <a href="https://en.wikipedia.org/wiki/NP-hard">NP-hard</a> problems. No polynomial time algorithms exist to solve this problem. The direct solution will be to try all possible permutations aka the brute force search and return the least costly path. There are $n!$ permutations for a n-city problem which means the running time is of the order of $O(n!)$. To solve a simple 20 city problem you'll have to check $2432902008176640000$ possible routes in worst case scenario.
+				<center><h5>Why is it important</h5></center>
+				The TSP has applications in areas such as planning, logistics and manufacture of microchips. For example, if a robotic hand has to solder n connections, what is the best route it should follow such that it minimizes time and energy consumed. It also appears as a sub-problem in DNA sequencing.
+				<center><h5>What is Simulated Annealing</h5></center>
+				We don't always require the best solution for this problem. To solve the TSP we use what are called heuristics which give us a &quot;good enough&quot; which may or may not be the optimal solution. Some of these heuristics are genetic algorithms, hill climbing, ant colony optimization etc. Simulated Annealing is one such heuristic. Annealing is the process of heating metals above their recrystallization temprature and then cooling them. The molten metals cool down slowly and crystallize in a low energy state.
+				<center><h5>Hill Climbing vs. Simulated Annealing</h5></center>
+				A hill climbing heuristic begins which a random route and slightly mutates it to get a neighbor solution. If the neighbor solution is better than the current solution, the neighbor solution becomes the current solution and the process proceeds as such. There's however a problem with the hill climbing approach that it easily gets stuck in a local optimum and misses the global best. 
+				<br />
+				<br />
+				Simulated Annealing solves this problem by sometimes choosing a bad neighbor to jump all over the search space. This gives it a better chance to find the global maximum and prevents it from getting stuck in a locally best solution.
+				<br />
+				<br />
+				The steps of simulated annealing are as follows:
+				<br />
+				<ol>
+					<li>Generate a random solution.</li>
+					<li>Calculate the cost of this solution i.e. the length of the route in case of TSP.</li>
+					<li>Mutate this solution to generate a neighboring solution i.e. a solution which differs slightly from the current solution.</li>
+					<li>Calculate the cost of neighboring solution.</li>
+					<li>Compare the two costs.<ul><li>if cost<sub>new</sub> &lt; cost<sub>old</sub>: move to the new solution</li></ul><ul><li>if cost<sub>new</sub> &gt; cost<sub>old</sub>: maybe move to the new solution</li></ul></li>
+				</ol>
+				<br />
+				The last step is the most important which prevents the solution from getting stuck in a local optimum. Simulated annealing uses something called &quot;temperature&quot; to simulate the temperature as in case of metals. When the cost<sub>new</sub> &gt; cost<sub>old</sub> we move to the new solution which a certain acceptance probability which is given by:
+				<br />
+				<p>$$probability = e^{\frac{cost_{old} - cost_{new}}{T}}$$</p>
+				where $T$ is the temperature.
+				<br />
+				Initially, when the temperature is high the bad neighbor is chosen with a greater probabilty which decreases as the temperature cools down. The rate at which the temperature cools down is $\alpha$ which ranges between $0.8$ to $1.0$ (exclusive).
+				<center><h5>2-opt algorithm</h5></center>
+				Even after using simulated annealing the search gets stuck with routes which cross over themselves. To solve this problem the <a href="https://en.wikipedia.org/wiki/2-opt">2-opt</a> local seach algorithm is used which reoders a route such that it does not over cross itself. The 2-opt swap reverses the order of cities between $i$ and $j$ (chosen randomly) so that the number of crosses can be reduced.
+				<center><h5>Source Code</h5></center>
+				The javascript source code is released under MIT License and is available on GitHub. Feel free to fork the repository and submit a pull request.
+				<center><h5>Demo</h5></center>
+				A basic javascript demo of the above mentioned method can be found here.
+				<center><h5>Credits &amp; Further Reading</h5></center>
+				<ul>
+					<li><a href="http://www.theprojectspot.com/tutorial-post/simulated-annealing-algorithm-for-beginners/6">Simulated Annealing for Beginners</a></li>
+					<li><a href="http://home.gwu.edu/~stroud/classics/KirkpatrickGelattVecchi83.pdf">Optimization by Simulated Annealing</a></li>
+					<li><a href="http://katrinaeg.com/simulated-annealing.html">The Simulated Annealing Algorithm</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
