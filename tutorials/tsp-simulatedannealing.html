@@ -35,7 +35,7 @@
 				<center><h5>Why is it important</h5></center>
 				The TSP has applications in areas such as planning, logistics and manufacture of microchips. For example, if a robotic hand has to solder n connections, what is the best route it should follow such that it minimizes time and energy consumed. It also appears as a sub-problem in DNA sequencing.
 				<center><h5>What is Simulated Annealing</h5></center>
-				We don't always require the best solution for this problem. To solve the TSP we use what are called heuristics which give us a &quot;good enough&quot; which may or may not be the optimal solution. Some of these heuristics are genetic algorithms, hill climbing, ant colony optimization etc. Simulated Annealing is one such heuristic. Annealing is the process of heating metals above their recrystallization temprature and then cooling them. The molten metals cool down slowly and crystallize in a low energy state.
+				We don't always require the best solution for this problem. To solve the TSP we use what are called heuristics which give us a &quot;good enough&quot; which may or may not be the optimal solution. Some of these heuristics are genetic algorithms, hill climbing, ant colony optimization etc. Simulated Annealing is one such heuristic. Annealing is the process of heating metals above their recrystallization temperature and then cooling them. The molten metals cool down slowly and crystallize in a low energy state.
 				<center><h5>Hill Climbing vs. Simulated Annealing</h5></center>
 				A hill climbing heuristic begins which a random route and slightly mutates it to get a neighbor solution. If the neighbor solution is better than the current solution, the neighbor solution becomes the current solution and the process proceeds as such. There's however a problem with the hill climbing approach that it easily gets stuck in a local optimum and misses the global best. 
 				<br />
@@ -58,9 +58,9 @@
 				<p>$$probability = e^{\frac{cost_{old} - cost_{new}}{T}}$$</p>
 				where $T$ is the temperature.
 				<br />
-				Initially, when the temperature is high the bad neighbor is chosen with a greater probabilty which decreases as the temperature cools down. The rate at which the temperature cools down is $\alpha$ which ranges between $0.8$ to $1.0$ (exclusive).
+				Initially, when the temperature is high the bad neighbor is chosen with a greater probability which decreases as the temperature cools down. The rate at which the temperature cools down is $\alpha$ which ranges between $0.8$ to $1.0$ (exclusive).
 				<center><h5>2-opt algorithm</h5></center>
-				Even after using simulated annealing the search gets stuck with routes which cross over themselves. To solve this problem the <a href="https://en.wikipedia.org/wiki/2-opt">2-opt</a> local seach algorithm is used which reoders a route such that it does not over cross itself. The 2-opt swap reverses the order of cities between $i$ and $j$ (chosen randomly) so that the number of crosses can be reduced.
+				Even after using simulated annealing the search gets stuck with routes which cross over themselves. To solve this problem the <a href="https://en.wikipedia.org/wiki/2-opt">2-opt</a> local search algorithm is used which reorders a route such that it does not over cross itself. The 2-opt swap reverses the order of cities between $i$ and $j$ (chosen randomly) so that the number of crosses can be reduced.
 				<center><h5>Source Code</h5></center>
 				The javascript source code is released under MIT License and is available on <a href="https://github.com/abdulfatir/SimulatedAnnealing-TSP">GitHub</a>. Feel free to fork the repository and submit a pull request.
 				<center><h5>Demo</h5></center>
