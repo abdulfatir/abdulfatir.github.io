@@ -1,0 +1,80 @@
+html, body
+{
+height: 100%;
+width: 100%;
+}
+
+.img-thumbnail
+{
+width: 200px;
+height: 156px;
+margin-left: auto;
+margin-right: auto;
+margin-top: -30px;
+}
+
+.back-img
+{
+background-image: url(../images/bg_1.jpg);
+background-attachment: fixed;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: -15;
+}
+
+.basic-info
+{
+display: table;
+position: relative;
+width: 100%;
+height: 100%;
+}
+
+.top-text
+{
+text-align: center;
+display: table-cell;
+vertical-align: middle;
+opacity: .95;
+}
+
+.top-text h1
+{
+font-family: 'Droid Serif', serif;
+font-size: 3.5em;
+font-weight: 700;
+color: white;
+padding: 0;
+margin: 10px;
+text-shadow: 2px 4px 6px rgba(0,0,0,0.3);
+}
+
+.top-text h2
+{
+font-family: 'Pacifico', cursive;
+color: white;
+}
+
+.location-text
+{
+    opacity: .6;
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color:white;
+}
+a
+{
+color: inherit;
+}
+a:link, a:hover, a:visited, a:active, a:focus
+{
+text-decoration: none;
+color:inherit;
+}
