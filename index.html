@@ -9,6 +9,18 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Pacifico">
 	</head>
 	<body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=537104606389720";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        </script>
         <div id="top" class="basic-info">
             <h2 class="location-text">Roorkee, India</h2>
             <div class="back-img"></div>
@@ -16,6 +28,12 @@
             <img src="/images/dp.jpg" alt="Abdul Fatir" class="img-thumbnail" />
             <h1>Abdul Fatir</h1>
                 <h2>I <span style="color:#eeba30;"><a href="http://blog.abdulfatir.com" target="_blank">write</a></span>. I <span style="color:#0073e5;"><a href="https://github.com/abdulfatir" target="_blank">code</a></span>. I take <span style="color:#7ddc1f;"><a href="https://500px.com/abdulfatir" target="_blank">pictures</a></span>.</h2>
+            </div>
+            <div class="follow">
+            <div class="fb-follow" data-href="https://www.facebook.com/profile.php?id=100003347960069" data-colorscheme="dark" data-layout="button_count" data-show-faces="false"></div>
+            <div class="twitter-follow">
+                <a href="https://twitter.com/SolitaryPenman" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false">Follow @SolitaryPenman</a>
+            </div>
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>

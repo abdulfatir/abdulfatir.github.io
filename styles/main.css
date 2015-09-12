@@ -78,3 +78,18 @@ a:link, a:hover, a:visited, a:active, a:focus
 text-decoration: none;
 color:inherit;
 }
+
+.follow
+{
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+    display: block;
+    width: 250px;
+}
+
+.fb-follow
+{
+    float: left;
+    margin-right: 10px;
+}
