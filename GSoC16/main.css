@@ -1,0 +1,73 @@
+
+.container {
+    color: #333333;
+}
+
+
+a:link {
+    text-decoration: none!important;
+}
+
+a:hover
+{
+    text-decoration: none;
+}
+
+a:active
+{
+    text-decoration: none;
+}
+
+a:visited
+{
+    text-decoration: none;
+}
+.article {
+    color: #404040;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    width: 80%;
+}
+
+.section {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.section h1 {
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #353535;
+    margin-bottom: 18px;
+}
+.header{
+    margin-bottom: 60px;
+    text-align: center;
+}
+.header h1{
+    text-align: center;
+    font-size: 54px;
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+.header small
+{
+    text-align: center;
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 28px;
+    
+}
+
+.subsection h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.bold {
+    font-weight: bold;
+    color: #353535;
+}

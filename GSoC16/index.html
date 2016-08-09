@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="main.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script src="https://use.fontawesome.com/2c675fd1fb.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,bold|Roboto+Slab:400,bold' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                    Mobile Based Blood Analysis
+            </h1>
+            <small>
+                <span style="color:#4285F4;">G</span><span style="color:#EA4335;">o</span><span style="color:#FBBC05;">o</span><span  style="color:#4285F4;">g</span><span style="color:#34A853;">l</span><span  style="color:#EA4335;">e</span> Summer of Code, 2016
+            </small>
+        </div>
+        <center>
+            <div class="article">
+
+                <div class="section" id="abstract">
+                    <h1>Abstract<a href="#abstract" class="headerlink"></a></h1>
+                    <p>The aim of this project is to use the camera and processing power of modern day cell phones to develop an intuitive and user-friendly application for the detection and concentration estimation of various biomarkers in blood sample images. It is later planned to be used as a screening test for cancer. The application will allow the user to take images of the blood samples in a set format. The image will then be segmented to detect the regions of interest. After noise removal, the intensity of each individual blob will be calculated. A linear curve will be fit through the intensity and known concentration data and the concentrations of the unknown samples will be estimated from the standard curve which will quantify the various molecules present in the sample.</p>
+                </div>
+
+                <div class="section" id="algorithm">
+                    <h1>Details of the Algorithm Used<a href="#algorithm" class="headerlink"></a></h1>
+                    <p></p>
+                </div>
+
+                <div class="section" id="usage">
+                    <h1>Usage<a href="#usage" class="headerlink"></a></h1>
+                    <div class="subsection">
+                        <h2>Android Phone</h2>
+                        <ol>
+                            <li>
+                                On your Android phone go to <span class="bold">Settings</span> &gt; <span class="bold">Security</span> and <span class="bold">Allow installation of Apps from Unknown Sources</span>.
+                            </li>
+                            <li>
+                                Download and Install <a href="#">this .apk</a> on your phone.
+                            </li>
+                            <li>Choose <span class="bold">Load Image</span> option and open image of the card with blood sample. Images of <a href="">this dataset</a> can be used. To be able to use the <span class="bold">Take Picture</span> option, you need to have a physical test card. You can get a printout of one of these images and use it instead for testing.
+                            </li>
+                            <li>Make sure that the image is loaded in portrait orientation. Rotate if necessary.
+                            </li>
+                            <li>Tap on <span class="bold">Analyze</span>. If the analysis is successful, the detected regions of interest will be highlighted using <span style="color:green;">green</span> color.
+                            </li>
+                            <li>Tap on each detected blob to enter its details. (Values to be entered for standard samples are shown in Fig.)
+                            </li>
+                            <li>Tap on <span class="bold">Results</span> and the estimated concentration of the unknown sample will be shown. The result will only be shown if the estimated concentration of the Quality Control Sample lies within 20% error bound.
+                            </li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </center>
+    </div>
+</body>
+
+</html>
