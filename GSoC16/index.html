@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -33,7 +33,86 @@
 
                 <div class="section" id="algorithm">
                     <h1>Details of the Algorithm Used<a href="#algorithm" class="headerlink"></a></h1>
-                    <p></p>
+                    <ol>
+                        <li>Let \(I_{raw}\) be the original image of the test card in portrait scaled to a width of <span class="lcode">600</span> while maintaining the aspect ratio.
+                            <div class="image-box">
+                                <img src="./images/raw.jpg" class="scaled-image" />
+                                <br />
+                                <span class="image-caption">\(I_{raw}\) : The Raw Image</span>
+                            </div>
+                        </li>
+
+                        <li>Convert \(I_{raw}\) to grayscale to get \(I_{gray}\).
+                            <div class="image-box">
+                                <img src="./images/gray.png" class="scaled-image" />
+                                <br />
+                                <span class="image-caption">\(I_{gray}\) : The Raw Image in Grayscale</span>
+                            </div>
+                        </li>
+
+                        <li>Apply <span class="lcode">5x5</span> Gaussian Blur to \(I_{gray}\) to get \(I_{gb}\).
+                            <div class="image-box">
+                                <img src="./images/gaussian.png" class="scaled-image" />
+                                <br />
+                                <span class="image-caption">\(I_{gb}\) : Gaussian Blurred \(I_{gray}\)</span>
+                            </div>
+                        </li>
+
+                        <li>Apply Adaptive Threshold to \(I_{gb}\) with a <span class="lcode">block-size</span> of <span class="lcode">85</span>, <span class="lcode">C-value</span> of <span class="lcode">2</span> and method <span class="lcode">MEAN_C</span> to get a binary image \(I_{th}\).
+                            <div class="image-box">
+                                <img src="./images/adap.png" class="scaled-image" />
+                                <br />
+                                <span class="image-caption">\(I_{th}\) : \(I_{gb}\) after Adaptive Threshold</span>
+                            </div>
+                        </li>
+
+                        <li>Apply morphological closing to \(I_{th}\) using a rectangular structuring element of size <span class="lcode">15x15</span> to get \(I_{mo}\).
+                            <div class="image-box">
+                                <img src="./images/morph.png" class="scaled-image" />
+                                <br />
+                                <span class="image-caption">\(I_{mo}\) : \(I_{th}\) after Morphological Closing</span>
+                            </div>
+                        </li>
+
+                        <li>Find the contours in \(I_{mo}\) and filter the found contours based on following criteria.
+                            <ul>
+                                <li>Area bounded by the contour lies between <span class="lcode">1000</span> and <span class="lcode">16000</span>.</li>
+                                <li>Aspect ratio of the rectangle bounding the contour lies between <span class="lcode">1</span> and <span class="lcode">1.5</span>.</li>
+                            </ul>
+                            <div class="image-box">
+                                <img src="./images/contours.png" class="scaled-image" />
+                                <br />
+                                <span class="image-caption"><span style="color:green;">Green</span> and <span style="color:blue;">Blue</span> boxes represent contours satisfying and not satisfying the set criteria respecively</span>
+                            </div>
+                        </li>
+                        <li>Find the co-ordinates of center of all rectangles bounding these filtered contours.</li>
+                        <li>Check the number of rectangular regions which lie within \(\pm15\) pixels in \(Y\) direction. If exactly <span class="lcode">6</span> such regions are found, the algorithm proceeds. These six regions represent the standard and quality control samples.</li>
+                        <li>Find another blob whose center is at least <span class="lcode">20</span> pixels away from the centers of the standard samples in the \(Y\) direction and lies approximately in the horizontal center of the <span class="lcode">6</span> blobs.
+                            <div class="image-box">
+                                <img src="./images/detect.png" class="scaled-image" />
+                                <br />
+                                <span class="image-caption">The Final Detections. <span style="color:green;">Green</span>: Standard and Quality Control samples, <span style="color:blue;">Blue</span>: Unknown sample.</span>
+                            </div>
+                        </li>
+                        <li>
+                            For each blob \(B\) of the <span class="lcode">7</span> blobs.
+                            <ul>
+                                <li>Clip the rectangular portion bounding \(B\) from \(I_{gray}\) to get \(R_{gray}\).</li>
+                                <li>Apply Otsu's binarization to \(R_{gray}\) to get \(R_{th}\).</li>
+                                <li>Iterate over every pixel of \(R_{gray}\) and sum the intensities of all pixels where \(R_{th}\) is <span class="lcode">0</span>. Let the sum be \(S\).</li>
+                                <li>Calculate average \(A = S/N\) where is \(N\) is the number of pixels in \(R_{th}\) with value <span class="lcode">0</span>.</li>
+                            </ul>
+                        </li>
+                        <li>Using the average intensity values and known concentration values of the five standard samples to train a linear regression model to get slope and intercept of the curve.
+                            <div class="image-box">
+                                <img src="./images/graph.png" class="scaled-image" />
+                                <br />
+                                <span class="image-caption">The Linear Regression</span>
+                            </div>
+                        </li>
+                        <li>Calculate the concentration of the quality control and unknown samples using the slope and intercept values.</li>
+                        <li>Check if the calculated concentration value of quality control sample lies within <span class="lcode">20%</span> error bound.</li>
+                    </ol>
                 </div>
 
                 <div class="section" id="usage">
@@ -42,7 +121,7 @@
                         <h2>Android Phone</h2>
                         <ol>
                             <li>
-                                On your Android phone go to <span class="bold">Settings</span> &gt; <span class="bold">Security</span> and <span class="bold">Allow installation of Apps from Unknown Sources</span>.
+                                On your Android phone go to <span class="bold">Settings</span> &gt; <span class="bold">Security</span> and <span class="bold">Allow installation of apps from unknown sources</span>.
                             </li>
                             <li>
                                 Download and Install <a href="#">this .apk</a> on your phone.
@@ -53,13 +132,66 @@
                             </li>
                             <li>Tap on <span class="bold">Analyze</span>. If the analysis is successful, the detected regions of interest will be highlighted using <span style="color:green;">green</span> color.
                             </li>
-                            <li>Tap on each detected blob to enter its details. (Values to be entered for standard samples are shown in Fig.)
+                            <li>Tap on each detected blob to enter its details. Concentrations of Standard and Quality Control samples are given below.
+                                <div class="image-box">
+                                    <img src="./images/marked.jpg" class="scaled-image" />
+                                    <br />
+                                    <span class="image-caption"><b>S1</b>, <b>S2</b>, <b>S3</b>, <b>S4</b>, <b>S5</b>: Standard Samples, <b>QC</b>: Quality Control Sample, <b>UK</b>: Unknown Sample</span>
+                                </div>
+
+                                <center>
+
+                                    <table class="tg">
+                                        <tr>
+                                            <th class="tg-yw4l">Sample Name</th>
+                                            <th class="tg-yw4l">Concentration (ng/mL)</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">S1</td>
+                                            <td class="tg-yw4l">100</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">S2</td>
+                                            <td class="tg-yw4l">150</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">S3</td>
+                                            <td class="tg-yw4l">250</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">S4</td>
+                                            <td class="tg-yw4l">300</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">S5</td>
+                                            <td class="tg-yw4l">350</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">QC</td>
+                                            <td class="tg-yw4l">200</td>
+                                        </tr>
+                                    </table>
+                                </center>
                             </li>
                             <li>Tap on <span class="bold">Results</span> and the estimated concentration of the unknown sample will be shown. The result will only be shown if the estimated concentration of the Quality Control Sample lies within 20% error bound.
                             </li>
                         </ol>
+                        <p>
+                            A video showing entire usage flow with both demo mode on and off is shown below.
+                        </p>
+                        <iframe width="640" height="480" src="https://www.youtube.com/embed/Dz0ZodHLZn4" frameborder="0" allowfullscreen></iframe>
                     </div>
 
+                </div>
+                <div class="section" id="sources">
+                    <h1>Source<a href="#sources" class="headerlink"></a></h1>
+                    <p>This project has been created from scratch and the sources for Android Studio can be found in this repository.</p>
+                </div>
+                <div class="section" id="issues">
+                    <h1>Known Issues<a href="#issues" class="headerlink"></a></h1>
+                </div>
+                <div class="section" id="acknow">
+                    <h1>Acknowledgment<a href="#acknow" class="headerlink"></a></h1>
                 </div>
             </div>
         </center>
