@@ -1,9 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
+    <title>Mobile Based Blood Analysis - GSoC 2016</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="../images/icon.png" />
     <link rel="stylesheet" href="./styles/main.css" />
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -22,13 +24,108 @@
             <small>
                 <span style="color:#4285F4;">G</span><span style="color:#EA4335;">o</span><span style="color:#FBBC05;">o</span><span  style="color:#4285F4;">g</span><span style="color:#34A853;">l</span><span  style="color:#EA4335;">e</span> Summer of Code, 2016
             </small>
+            <br />
+            <span class="details"><b>Abdul Fatir Ansari</b> with <b>Computational Biology @ University of Nebraska-Lincoln</b></span>
         </div>
         <center>
             <div class="article">
 
                 <div class="section" id="abstract">
-                    <h1>Abstract<a href="#abstract" class="headerlink"></a></h1>
-                    <p>The aim of this project is to use the camera and processing power of modern day cell phones to develop an intuitive and user-friendly application for the detection and concentration estimation of various biomarkers in blood sample images. It is later planned to be used as a screening test for cancer. The application will allow the user to take images of the blood samples in a set format. The image will then be segmented to detect the regions of interest. After noise removal, the intensity of each individual blob will be calculated. A linear curve will be fit through the intensity and known concentration data and the concentrations of the unknown samples will be estimated from the standard curve which will quantify the various molecules present in the sample.</p>
+                    <h1>Introduction<a href="#abstract" class="headerlink"></a></h1>
+                    <p>The aim of this project is to use the camera and processing power of modern day cell phones to develop an intuitive and user-friendly application for the detection and concentration estimation of various bio-markers in blood sample images. It is later planned to be used as a screening test for cancer. The application will allow the user to take images of the blood samples in a set format. The image will then be segmented to detect the regions of interest. After noise removal, the intensity of each individual blob will be calculated. A linear curve will be fit through the intensity and known concentration data and the concentrations of the unknown samples will be estimated from the standard curve which will quantify the various molecules present in the sample.</p>
+                </div>
+
+                <div class="section" id="demo">
+                    <h1>Demo<a href="#demo" class="headerlink"></a></h1>
+                    <p style="margin-bottom:25px;">
+                        A video showing entire usage flow of the final Android Application with both demo mode on and off is exhibited below.
+                    </p>
+                    <center>
+                        <iframe width="640" height="480" src="https://www.youtube.com/embed/Dz0ZodHLZn4" frameborder="0" allowfullscreen></iframe>
+                    </center>
+                    <p style="margin-top:25px;">
+                        The algorithm developed for detection is fairly robust. We tested it against images of very bad quality, taken in bad lighting and it performed well. <a href="https://youtu.be/wig3MIRoXp4" target="_blank">Here</a> is a video showing the robustness of detection using our algorithm.
+                    </p>
+                </div>
+
+                <div class="section" id="sources">
+                    <h1>Sources<a href="#sources" class="headerlink"></a></h1>
+                    <p>This project has been created from scratch and the sources for Android Studio can be found in <a href="https://github.com/abdulfatir/blood-analysis-app/" target="_blank">this repository</a>. A list of commits can be found <a href="https://github.com/abdulfatir/blood-analysis-app/commits/master" target="_blank">here</a>.</p>
+                    <div class="subsection">
+                        <h2>How to Build</h2>
+                        <ol>
+                            <li>Clone the repository or download it <a href="https://github.com/abdulfatir/blood-analysis-app/archive/master.zip">as a zip file</a> and extract it.</li>
+                            <li>Open Android Studio and import the directory as an existing Android project.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="section" id="usage">
+                    <h1>Usage<a href="#usage" class="headerlink"></a></h1>
+                    <div class="subsection">
+                        <h2>Android Phone</h2>
+
+                        <ol>
+                            <li>
+                                On your Android phone go to <span class="bold">Settings</span> &gt; <span class="bold">Security</span> and <span class="bold">Allow installation of apps from unknown sources</span>.
+                            </li>
+                            <li>
+                                Download and Install <a href="./files/ConcAnalyzer.apk">this .apk</a> on your phone.
+                            </li>
+                            <li>On first run, you'll be prompted whether to keep demo mode on.</li>
+                            <li>Choose <span class="bold">Load Image</span> option and open image of the card with blood sample. Images of <a href="./files/images.zip">this dataset</a> can be used. To be able to use the <span class="bold">Take Picture</span> option, you need to have a physical test card. You can get a printout of one of these images and use it instead for testing. When taking a picture, keep the background distraction-less (white preferably).
+                            </li>
+                            <li>Make sure that the image is loaded in portrait orientation. Rotate if necessary. It should be loaded like <a href="./images/correct.png" target="_blank">this</a> and not like <a href="./images/wrong.png" target="_blank">this</a>. Check <a href="#issues">Known Issues</a>.
+                            </li>
+                            <li>Tap on <span class="bold">Analyze</span>. If the analysis is successful, the detected regions of interest will be highlighted using <span style="color:green;">green</span> color. If the demo mode is on, the detected regions will be highlighted in <span style="color:red;">red</span>. A red highlight indicates that the details for that blob have been updated.
+                            </li>
+                            <li>If the demo mode is off, tap on each detected blob to enter its details. Once the details are entered for a blob, its highlight will turn red. Concentrations of Standard and Quality Control samples are given below.
+                                <div class="image-box">
+                                    <img src="./images/marked.jpg" class="scaled-image" />
+                                    <br />
+                                    <span class="image-caption"><b>S1</b>, <b>S2</b>, <b>S3</b>, <b>S4</b>, <b>S5</b>: Standard Samples, <b>QC</b>: Quality Control Sample, <b>UK</b>: Unknown Sample</span>
+                                </div>
+
+                                <center>
+
+                                    <table class="tg">
+                                        <tr>
+                                            <th class="tg-yw4l">Sample Name</th>
+                                            <th class="tg-yw4l">Concentration (ng/mL)</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">S1</td>
+                                            <td class="tg-yw4l">100</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">S2</td>
+                                            <td class="tg-yw4l">150</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">S3</td>
+                                            <td class="tg-yw4l">250</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">S4</td>
+                                            <td class="tg-yw4l">300</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">S5</td>
+                                            <td class="tg-yw4l">350</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-yw4l">QC</td>
+                                            <td class="tg-yw4l">200</td>
+                                        </tr>
+                                    </table>
+                                </center>
+                            </li>
+                            <li>Tap on <span class="bold">Results</span> and the estimated concentration of the unknown sample will be shown along with the standard curve. A message will be shown if the error in the calculation of the concentration of the quality control sample exceeds 20%.
+                            </li>
+                        </ol>
+                        <p><b>Note</b>: The application has been tested on Android versions 5.0, 5.1, and 6.0 on Samsung, Moto and Xiaomi phones. The application may or may not work properly on pre-Lollipop Android devices.</p>
+                    </div>
+
                 </div>
 
                 <div class="section" id="algorithm">
@@ -82,7 +179,7 @@
                             <div class="image-box">
                                 <img src="./images/contours.png" class="scaled-image" />
                                 <br />
-                                <span class="image-caption"><span style="color:green;">Green</span> and <span style="color:blue;">Blue</span> boxes represent contours satisfying and not satisfying the set criteria respecively</span>
+                                <span class="image-caption"><span style="color:green;">Green</span> and <span style="color:blue;">Blue</span> boxes represent contours satisfying and not satisfying the set criteria respectively</span>
                             </div>
                         </li>
                         <li>Find the co-ordinates of center of all rectangles bounding these filtered contours.</li>
@@ -115,83 +212,21 @@
                     </ol>
                 </div>
 
-                <div class="section" id="usage">
-                    <h1>Usage<a href="#usage" class="headerlink"></a></h1>
-                    <div class="subsection">
-                        <h2>Android Phone</h2>
-                        <ol>
-                            <li>
-                                On your Android phone go to <span class="bold">Settings</span> &gt; <span class="bold">Security</span> and <span class="bold">Allow installation of apps from unknown sources</span>.
-                            </li>
-                            <li>
-                                Download and Install <a href="#">this .apk</a> on your phone.
-                            </li>
-                            <li>Choose <span class="bold">Load Image</span> option and open image of the card with blood sample. Images of <a href="">this dataset</a> can be used. To be able to use the <span class="bold">Take Picture</span> option, you need to have a physical test card. You can get a printout of one of these images and use it instead for testing.
-                            </li>
-                            <li>Make sure that the image is loaded in portrait orientation. Rotate if necessary.
-                            </li>
-                            <li>Tap on <span class="bold">Analyze</span>. If the analysis is successful, the detected regions of interest will be highlighted using <span style="color:green;">green</span> color.
-                            </li>
-                            <li>Tap on each detected blob to enter its details. Concentrations of Standard and Quality Control samples are given below.
-                                <div class="image-box">
-                                    <img src="./images/marked.jpg" class="scaled-image" />
-                                    <br />
-                                    <span class="image-caption"><b>S1</b>, <b>S2</b>, <b>S3</b>, <b>S4</b>, <b>S5</b>: Standard Samples, <b>QC</b>: Quality Control Sample, <b>UK</b>: Unknown Sample</span>
-                                </div>
-
-                                <center>
-
-                                    <table class="tg">
-                                        <tr>
-                                            <th class="tg-yw4l">Sample Name</th>
-                                            <th class="tg-yw4l">Concentration (ng/mL)</th>
-                                        </tr>
-                                        <tr>
-                                            <td class="tg-yw4l">S1</td>
-                                            <td class="tg-yw4l">100</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tg-yw4l">S2</td>
-                                            <td class="tg-yw4l">150</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tg-yw4l">S3</td>
-                                            <td class="tg-yw4l">250</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tg-yw4l">S4</td>
-                                            <td class="tg-yw4l">300</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tg-yw4l">S5</td>
-                                            <td class="tg-yw4l">350</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tg-yw4l">QC</td>
-                                            <td class="tg-yw4l">200</td>
-                                        </tr>
-                                    </table>
-                                </center>
-                            </li>
-                            <li>Tap on <span class="bold">Results</span> and the estimated concentration of the unknown sample will be shown. The result will only be shown if the estimated concentration of the Quality Control Sample lies within 20% error bound.
-                            </li>
-                        </ol>
-                        <p>
-                            A video showing entire usage flow with both demo mode on and off is shown below.
-                        </p>
-                        <iframe width="640" height="480" src="https://www.youtube.com/embed/Dz0ZodHLZn4" frameborder="0" allowfullscreen></iframe>
-                    </div>
-
-                </div>
-                <div class="section" id="sources">
-                    <h1>Source<a href="#sources" class="headerlink"></a></h1>
-                    <p>This project has been created from scratch and the sources for Android Studio can be found in this repository.</p>
-                </div>
                 <div class="section" id="issues">
                     <h1>Known Issues<a href="#issues" class="headerlink"></a></h1>
+                    <ol>
+                        <li>In some Samsung and Mi phones, at times the image taken from the camera is rotated after capture. For the application to function, the test card should be loaded in portrait orientation like <a href="./images/correct.png" target="_blank">this</a>, and not in <a href="./images/wrong.png" target="_blank">landscape</a>. Therefore, when using the camera feature, the picture should be taken such that it loads as a portrait image. </li>
+                    </ol>
                 </div>
+
                 <div class="section" id="acknow">
                     <h1>Acknowledgment<a href="#acknow" class="headerlink"></a></h1>
+                    <p>
+                        I'm indebted to Dr. Tomas Helikar for giving me the opportunity of working on this amazing project. I would also like to thank Philipp Jahoda, whose library, <a href="https://github.com/PhilJay/MPAndroidChart" target="_blank">MPAndroidChart</a>, has been used in this project. It has been released under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License 2.0</a>.
+                    </p>
+                    <p>
+                        Also, Thank you, <span style="color:#4285F4;">G</span><span style="color:#EA4335;">o</span><span style="color:#FBBC05;">o</span><span style="color:#4285F4;">g</span><span style="color:#34A853;">l</span><span style="color:#EA4335;">e</span>. :D
+                    </p>
                 </div>
             </div>
         </center>
