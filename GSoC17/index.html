@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mobile Based Blood Analysis (iOS) - GSoC 2017</title>
+    <meta charset="utf-8">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Mobile Based Blood Analysis - GSoC 2017" />
+    <meta property="og:description" content="Automatic blood sample detection and concentration estimation using OpenCV on iOS" />
+
+    <link rel="shortcut icon" type="image/png" href="../images/icon.png" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script src="https://use.fontawesome.com/2c675fd1fb.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,bold|Roboto+Slab:400,bold' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                    Mobile Based Blood Analysis (iOS)
+            </h1>
+            <small>
+                <span style="color:#4285F4;">G</span><span style="color:#EA4335;">o</span><span style="color:#FBBC05;">o</span><span  style="color:#4285F4;">g</span><span style="color:#34A853;">l</span><span  style="color:#EA4335;">e</span> Summer of Code, 2017
+            </small>
+            <br />
+            <span class="details"><b>Abdul Fatir Ansari</b> with <b>Computational Biology @ University of Nebraska-Lincoln</b></span>
+        </div>
+        <center>
+            <div class="article">
+
+                <div class="section" id="abstract">
+                    <h1>Introduction<a href="#abstract" class="headerlink"></a></h1>
+                    <p>The aim of this project is to use the camera and processing power of modern day cell phones to develop an intuitive and user-friendly application for the detection and concentration estimation of various bio-markers in blood sample images. It is later planned to be used as a screening test for cancer. The application will allow the user to take images of the blood samples in a set format. The image will then be segmented to detect the regions of interest. After noise removal, the intensity of each individual blob will be calculated. A linear curve will be fit through the intensity and known concentration data and the concentrations of the unknown samples will be estimated from the standard curve which will quantify the various molecules present in the sample. The aim of the project this year was to develop the iOS version of ConcAnalyzer which was developed for Android last year.</p>
+                </div>
+
+                <div class="section" id="demo">
+                    <h1>Demo<a href="#demo" class="headerlink"></a></h1>
+                    <p style="margin-bottom:25px;">
+                        A video showing entire usage flow of the final iOS Application is exhibited below.
+                    </p>
+                    <center>
+                        <iframe width="640" height="480" src="https://www.youtube.com/embed/MH3_-PCBkHk" frameborder="0" allowfullscreen></iframe>
+                    </center>
+                </div>
+
+                <div class="section" id="workdone">
+                    <h1>Word Done in GSoC 2017<a href="#workdone" class="headerlink"></a></h1>
+                    <p>This project is a continuation of last year's work which can be found in <a href="https://github.com/abdulfatir/blood-analysis-app/" target="_blank">this repository</a>. Before implementing last year's algorithm in iOS, it was changed in some respects to get better accuracy and results from all the 3 channels of the input image. This changed algorithm was first added to the Android version of the application and then the iOS version was developed. A list of commits can be found below.
+                    </p>
+                    <h4 class="subsection">Android</h4>
+                    <ul>
+                        <li><a href="https://github.com/abdulfatir/blood-analysis-app/commit/2c14d2b4c4cbea66dc873b136d110978c0cc0f3a" target="_blank">2c14d2b</a></li>
+                    </ul>
+                    <h4 class="subsection">iOS</h4>
+                    <ul>
+                    <li>
+                        For iOS, a <a href="https://github.com/abdulfatir/blood-analysis-app-ios">new repository</a> was created and a list of commits made this summer can be found <a href="https://github.com/abdulfatir/blood-analysis-app-ios/commits/master">here</a>. Instructions on how to build the app can be found in the repository's <a href="https://github.com/abdulfatir/blood-analysis-app-ios/blob/master/README.md">README</a>.
+                    </li>
+                    </ul>
+                </div>
+
+                <div class="section" id="algorithm">
+                    <h1>Details of the Algorithm Used<a href="#algorithm" class="headerlink"></a></h1>
+                    <p>The algorithm used for detection of regions of interest is same as last year which can be found <a href="http://abdulfatir.github.io/GSoC16/#algorithm" target="_blank">here</a> (Points 1-9). Only the algorithm for concentration estimation has been changed which is explained below.</p>
+                    <ol>
+                        <li>
+                            For each blob \(B\) of the <span class="lcode">7</span> blobs.
+                            <ul>
+                                <li>Clip the rectangular portion bounding \(B\) from \(I_{raw}\) to get \(R_{clip}\).</li>
+                                <li>For each channel of \(R_{clip}\) generate the histogram and find the intensity which is most frequent. We get 3 intensities for each blob namely \(i_{red}\), \(i_{green}\), and \(i_{blue}\).</li>
+                            </ul>
+                        </li>
+                        <li>Use the intensity values (\(i_{red}\), \(i_{green}\), and \(i_{blue}\)) and known concentration values of the five standard samples to train 3 linear regression models to get slopes and intercepts for each channel. Also calculate the \(R^2\) score of each regression model.
+                        </li>
+                        <li>Calculate the concentration of the quality control and unknown samples using the slope and intercept values. We get 3 concentration values for each sample.</li>
+                    </ol>
+                </div>
+
+                <div class="section" id="acknow">
+                    <h1>Acknowledgment<a href="#acknow" class="headerlink"></a></h1>
+                    <p>
+                        I'm indebted to Dr. Tomas Helikar for giving me the opportunity of working on this amazing project. I would also like to thank Daniel Cohen Gindi &amp; Philipp Jahoda, whose library, <a href="https://github.com/danielgindi/Charts" target="_blank">MPAndroidChart</a>, has been used in this project. It has been released under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License 2.0</a>.
+                    </p>
+                    <p>
+                        Also, Thank you, <span style="color:#4285F4;">G</span><span style="color:#EA4335;">o</span><span style="color:#FBBC05;">o</span><span style="color:#4285F4;">g</span><span style="color:#34A853;">l</span><span style="color:#EA4335;">e</span>. 😀
+                    </p>
+                </div>
+            </div>
+        </center>
+    </div>
+</body>
+
+</html>
