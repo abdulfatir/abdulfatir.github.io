@@ -1,11 +1,5 @@
-$(document).ready(
-    $(window).scroll(function() {    
+$(window).scroll(function() {    
     var scroll = $(window).scrollTop();
-
-    if (scroll >= 500) {
-        $(".scroll-img").css("opacity", 1);
-    } else {
-        $(".scroll-img").css("opacity", 0);
-    }
-    });
-);
+    var opacity = Math.min(scroll/250, 1);
+    $(".scroll-img").css("opacity", opacity);
+});
