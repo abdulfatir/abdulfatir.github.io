@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am PhD student at the School of Computing, National University of Singapore, advised by Dr. Harold Soh. I primarily work on interpretable generative models.
+I am a PhD student at the School of Computing, National University of Singapore, advised by Dr. Harold Soh. I primarily work on interpretable generative models.
 
 ### More Information
 
