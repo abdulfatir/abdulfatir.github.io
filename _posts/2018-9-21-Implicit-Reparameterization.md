@@ -37,7 +37,7 @@ Implicit Reparameterization eliminates the restrictive requirement of an inverti
 
 <center>
 <figure>
-  <img style="display: box; margin: auto; width: 50%; height: 50%;" 
+  <img style="display: box; margin: auto; width: 30%; height: 30%;" 
        src="{{site.url}}images/blogs/implicit.png" alt="Implicit Reparameterization"/>
 </figure>
 </center>
