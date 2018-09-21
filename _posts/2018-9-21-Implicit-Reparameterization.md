@@ -23,4 +23,16 @@ Earlier methods of gradient computation include score-function-based estimators 
 ### Explicit Reparameterization
 
 It requires a standardization function $$\mathcal{S}_\phi(\mathbf{z})$$ such that $$\mathcal{S}_\phi(\mathbf{z}) = \bm{\varepsilon} \sim p(\bm{\varepsilon})$$. It also requires $$\mathcal{S}_\phi(\mathbf{z})$$ to be invertible.
-$$\mathbf{z}\sim q_\phi(\mathbf{z}) \Leftrightarrow \mathbf{z} = \mathcal{S}_\phi^{-1}(\bm{\varepsilon})$$ and  $$\bm{\varepsilon} \sim p(\bm{\varepsilon})$$.
+$$\mathbf{z}\sim q_\phi(\mathbf{z}) \Leftrightarrow \mathbf{z} = \mathcal{S}_\phi^{-1}(\varepsilon)$$ and  $$\varepsilon \sim p(\varepsilon)$$.
+
+$$
+\begin{align*}
+        \nabla_\phi\mathbb{E}_{q_\phi(\mathbf{z})}[f(\mathbf{z})] &=  \mathbb{E}_{q(\varepsilon)}[\nabla_\phi f(\mathcal{S}_\phi^{-1}(\varepsilon))]\\
+        &= \mathbb{E}_{q(\varepsilon)}[\nabla_\mathbf{z}f(\mathcal{S}_\phi^{-1}(\varepsilon))\nabla_\phi\mathcal{S}_\phi^{-1}(\varepsilon)]
+\end{align*}
+$$    
+    
+    
+    
+    
+    
