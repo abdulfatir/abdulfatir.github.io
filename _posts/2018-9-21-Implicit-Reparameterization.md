@@ -35,7 +35,10 @@ $$
 ## Implicit Reparameterization
 Implicit Reparameterization eliminates the restrictive requirement of an invertible $$\mathcal{S}_\phi(\mathbf{z})$$.
 
-![Implicit]({{site.url}}/images/dp.jpg)
+<figure>
+  <img style="display: box; margin: auto" 
+       src="{{site.url}}/images/blogs/implicit.png" alt="Implicit Reparameterization"/>
+</figure>
 
 $$
 \begin{align}
