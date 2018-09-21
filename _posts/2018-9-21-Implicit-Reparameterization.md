@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Implicit Reparameterization Gradients
-excerpt: Backpropagation through a stochastic node is an important problem in deep learning. The optimization of $$\mathbb{E}_{q_\phi(\mathbf{z})}[f(\mathbf{z})]$$ requires computation of $$\nabla_\phi\mathbb{E}_{q_\phi(\mathbf{z})}[f(\mathbf{z})]$$. Stochastic variational inference requires the computation of the gradient of one such expectation.
+excerpt: Backpropagation through a stochastic node is an important problem in deep learning. Implicit reparameterization gradients go beyond the reparameterization trick to address the problem of efficient gradient computation in such a setting.
 ---
 
 <script type="text/x-mathjax-config">
