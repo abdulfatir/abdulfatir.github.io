@@ -11,6 +11,8 @@ Backpropagation through a stochastic node is an important problem in deep learni
 
 $$
 \definecolor{mLightBrown}{HTML}{EB811B}
+$$
+$$
 \begin{align*}
     \mathcal{L}(\mathbf{x},\theta, \phi) = \color{mLightBrown}{\mathbb{E}_{q_{\phi}(\mathbf{z}|\mathbf{x})}[\log p_\theta(\mathbf{x}|\mathbf{z})]} - \mathrm{KL}(q_{\phi}(\mathbf{z}|\mathbf{x})||p(\mathbf{z}))
 \end{align*}
