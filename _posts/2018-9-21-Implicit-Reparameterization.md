@@ -85,5 +85,11 @@ $$
 $$
 
 ## Conclusion
-Implicit Reparameterization allows stochastic backpropagation through a variety of distributions such as truncated, mixtures, gamma, Von-Mises, Beta, etc. Check out [these slides](https://github.com/abdulfatir/abdulfatir.github.io/raw/master/files/pdfs/implicit2018.pdf) and [the paper](https://arxiv.org/abs/1805.08498).
-{: .text-justify}
+Implicit Reparameterization allows stochastic backpropagation through a variety of distributions such as truncated, mixtures, gamma, Von-Mises, Beta, etc. Check out [these slides](http://abdulfatir.github.io/files/pdfs/implicit2018.pdf) and [the paper](https://arxiv.org/abs/1805.08498).
+
+### References
+[1] Figurnov, M., Mohamed, S. and Mnih, A., 2018. Implicit Reparameterization Gradients. arXiv preprint arXiv:1805.08498.
+[2] Jang, E., Gu, S. and Poole, B., 2016. Categorical reparameterization with gumbel-softmax. arXiv preprint arXiv:1611.01144.
+[3] Kingma, D.P. and Welling, M., 2013. Auto-encoding variational bayes. arXiv preprint arXiv:1312.6114.
+[4] Naesseth, C.A., Ruiz, F.J., Linderman, S.W. and Blei, D.M., 2016. Reparameterization gradients through acceptance-rejection sampling algorithms. arXiv preprint arXiv:1610.05683.
+[5] Ruiz, F.R., AUEB, M.T.R. and Blei, D., 2016. The generalized reparameterization gradient. In Advances in neural information processing systems (pp. 460-468).
