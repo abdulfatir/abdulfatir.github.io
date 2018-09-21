@@ -20,7 +20,7 @@ $$
 
 Earlier methods of gradient computation include score-function-based estimators (REINFORCE) and pathwise gradient estimators (reparameterization trick). Recent works have proposed using reparametrizable surrograte distributions such as **Gumbel-Softmax** for **Categorical**, **Kumaraswamy** for **Beta**, etc. Other recent works such as Generalized Reparameterization Gradients (GRG) and Rejection Sampling Variational Inference (RSVI) have sought to build a generalized framework for gradient computation.
 
-### Explicit Reparameterization
+## Explicit Reparameterization
 
 It requires a standardization function $$\mathcal{S}_\phi(\mathbf{z})$$ such that $$\mathcal{S}_\phi(\mathbf{z}) = \varepsilon \sim p(\varepsilon)$$. It also requires $$\mathcal{S}_\phi(\mathbf{z})$$ to be invertible.
 $$\mathbf{z}\sim q_\phi(\mathbf{z}) \Leftrightarrow \mathbf{z} = \mathcal{S}_\phi^{-1}(\varepsilon)$$ and  $$\varepsilon \sim p(\varepsilon)$$.
@@ -32,8 +32,9 @@ $$
 \end{align*}
 $$    
 
-### Implicit Reparameterization
+## Implicit Reparameterization
 Implicit Reparameterization eliminates the restrictive requirement of an invertible $$\mathcal{S}_\phi(\mathbf{z})$$.
+
 $$
 \begin{align}
         \nabla_\phi\mathbb{E}_{q_\phi(\mathbf{z})}[f(\mathbf{z})] &= \mathbb{E}_{q(\varepsilon)}[\nabla_\mathbf{z}f(\mathcal{S}_\phi^{-1}(\varepsilon))\nabla_\phi\mathcal{S}_\phi^{-1}(\varepsilon)]\\
@@ -54,6 +55,10 @@ $$
     \end{align}
 $$
 
+### Examples
+#### Normal Distribution
+
+* $$\mathcal{S}_\phi(\mathbf{z}) = \frac{\mathbf{z}-\mu}{\sigma} \sim \mathcal{N}(\mathbf{0},\mathbf{I})$$
     
     
     
