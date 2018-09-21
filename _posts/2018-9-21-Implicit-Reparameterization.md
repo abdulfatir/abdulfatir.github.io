@@ -18,4 +18,9 @@ $$
 \end{align*}
 $$
 
-Earlier methods of gradient computation include score-function-based estimators (REINFORCE) and pathwise gradient estimators (reparameterization trick). Recent works have proposed using reparametrizable surrograte distributions such as $$\mathrm{GumbelSoftmax}$$ for $$\mathrm{Categorical}$$, $$\mathrm{Kumaraswamy}$$ for $$\mathrm{Beta}$$, etc. Other recent works such as Generalized Reparameterization Gradients (GRG) and Rejection Sampling Variational Inference (RSVI) have sought to build a generalized framework for gradient computation.
+Earlier methods of gradient computation include score-function-based estimators (REINFORCE) and pathwise gradient estimators (reparameterization trick). Recent works have proposed using reparametrizable surrograte distributions such as **Gumbel-Softmax** for **Categorical**, **Kumaraswamy** for **Beta**, etc. Other recent works such as Generalized Reparameterization Gradients (GRG) and Rejection Sampling Variational Inference (RSVI) have sought to build a generalized framework for gradient computation.
+
+### Explicit Reparameterization
+
+It requires a standardization function $$\mathcal{S}_\phi(\mathbf{z})$$ such that $$\mathcal{S}_\phi(\mathbf{z}) = \bm{\varepsilon} \sim p(\bm{\varepsilon})$$. It also requires $$\mathcal{S}_\phi(\mathbf{z})$$ to be invertible.
+$$\mathbf{z}\sim q_\phi(\mathbf{z}) \Leftrightarrow \mathbf{z} = \mathcal{S}_\phi^{-1}(\bm{\varepsilon})$$ and  $$\bm{\varepsilon} \sim p(\bm{\varepsilon})$$.
