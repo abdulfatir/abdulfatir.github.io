@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Implicit Reparameterization Gradients
+comments: true
 ---
 
 <script type="text/x-mathjax-config">
