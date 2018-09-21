@@ -35,6 +35,8 @@ $$
 ## Implicit Reparameterization
 Implicit Reparameterization eliminates the restrictive requirement of an invertible $$\mathcal{S}_\phi(\mathbf{z})$$.
 
+![Implicit]({{site.url}}/images/dp.jpg)
+
 $$
 \begin{align}
         \nabla_\phi\mathbb{E}_{q_\phi(\mathbf{z})}[f(\mathbf{z})] &= \mathbb{E}_{q(\varepsilon)}[\nabla_\mathbf{z}f(\mathcal{S}_\phi^{-1}(\varepsilon))\nabla_\phi\mathcal{S}_\phi^{-1}(\varepsilon)]\\
@@ -65,7 +67,15 @@ The standardization function for the normal distribution is $$\mathcal{S}_\phi(\
 
 #### Using Cumulative Distribution Function
 
-The CDF can be used as a standardization function by using the property that for a random variable $$\mathbf{z}$$, the random variable $$\mathbf{y} = F_\phi(\mathbf{z})$$ has the uniform distribution on $$[0,1]$$ where $$F_\phi$$ is the CDF.
-    
-    
+The CDF can be used as a standardization function by using the property that for a random variable $$\mathbf{z}$$, the random variable $$\mathbf{y} = F_\phi(\mathbf{z})$$ has the uniform distribution on $$[0,1]$$ where $$F_\phi$$ is the CDF. The gradient can then be computed as follows.
+
+$$
+\nabla_\phi\mathbf{z} = -\frac{\nabla_\phi F_\phi(\mathbf{z})}{q_\phi(\mathbf{z})}
+$$
+
+### Conclusion
+Implicit Reparameterization allows stochastic backpropagation through a variety of distributions such as truncated, mixtures, gamma, Von-Mises, Beta, etc. Check out [these slides](https://github.com/abdulfatir/abdulfatir.github.io/raw/master/files/pdfs/implicit2018.pdf) and [the paper](https://arxiv.org/abs/1805.08498).
+
+
+
     
