@@ -7,6 +7,8 @@ title: Implicit Reparameterization Gradients
   MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
 </script>
 
+<div style="text-align: justify;">
+
 Backpropagation through a stochastic node is an important problem in deep learning. The optimization of $$\mathbb{E}_{q_\phi(\mathbf{z})}[f(\mathbf{z})]$$ requires computation of $$\nabla_\phi\mathbb{E}_{q_\phi(\mathbf{z})}[f(\mathbf{z})]$$. Stochastic variational inference requires the computation of the gradient of one such expectation.
 
 $$
@@ -31,7 +33,8 @@ $$
         &= \mathbb{E}_{q(\varepsilon)}[\nabla_\mathbf{z}f(\mathcal{S}_\phi^{-1}(\varepsilon))\nabla_\phi\mathcal{S}_\phi^{-1}(\varepsilon)]
 \end{align*}
 $$    
-    
+
+</div>
     
     
     
