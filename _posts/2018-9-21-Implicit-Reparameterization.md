@@ -67,15 +67,15 @@ $$
 
 where Eq. (1) uses the fact that the total derivative of noise with respect to the distribution parameters is 0 and Eq. (2) applies the multivariate chain rule based on Figure 1.
 
-### Examples
-#### Normal Distribution
+## Examples
+### Normal Distribution
 
 The standardization function for the normal distribution is $$\mathcal{S}_\phi(\mathbf{z}) = \frac{\mathbf{z}-\mu}{\sigma} \sim \mathcal{N}(\mathbf{0},\mathbf{I})$$.
 
 * Explicit Reparameterization: $$\mathcal{S}_\phi^{-1}(\varepsilon) = \mu + \sigma\varepsilon \Rightarrow \frac{d\mathbf{z}}{d\mu} = 1$$ and $$\frac{d\mathbf{z}}{d\sigma} = \varepsilon$$.
 * Implicit Reparameterization: $$\frac{d\mathbf{z}}{d\mu} = -\frac{d\mathcal{S}_\phi(\mathbf{z})/d\mu}{d\mathcal{S}_\phi(\mathbf{z})/d\mathbf{z}} = 1$$ and $$\frac{d\mathbf{z}}{d\sigma} = -\frac{d\mathcal{S}_\phi(\mathbf{z})/d\sigma}{d\mathcal{S}_\phi(\mathbf{z})/d\mathbf{z}} = \frac{\mathbf{z}-\mu}{\sigma}$$.
 
-#### Using Cumulative Distribution Function
+### Using Cumulative Distribution Function
 
 The CDF can be used as a standardization function by using the property that for a random variable $$\mathbf{z}$$, the random variable $$\mathbf{y} = F_\phi(\mathbf{z})$$ has the uniform distribution on $$[0,1]$$ where $$F_\phi$$ is the CDF. The gradient can then be computed as follows.
 
@@ -83,9 +83,6 @@ $$
 \nabla_\phi\mathbf{z} = -\frac{\nabla_\phi F_\phi(\mathbf{z})}{q_\phi(\mathbf{z})}
 $$
 
-### Conclusion
+## Conclusion
 Implicit Reparameterization allows stochastic backpropagation through a variety of distributions such as truncated, mixtures, gamma, Von-Mises, Beta, etc. Check out [these slides](https://github.com/abdulfatir/abdulfatir.github.io/raw/master/files/pdfs/implicit2018.pdf) and [the paper](https://arxiv.org/abs/1805.08498).
-
-
-
-    
+{: .text-justify}
