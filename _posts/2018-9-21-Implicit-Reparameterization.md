@@ -62,6 +62,10 @@ The standardization function for the normal distribution is $$\mathcal{S}_\phi(\
 
 * Explicit Reparameterization: $$\mathcal{S}_\phi^{-1}(\varepsilon) = \mu + \sigma\varepsilon \Rightarrow \frac{d\mathbf{z}}{d\mu} = 1$$ and $$\frac{d\mathbf{z}}{d\sigma} = \varepsilon$$.
 * Implicit Reparameterization: $$\frac{d\mathbf{z}}{d\mu} = -\frac{d\mathcal{S}_\phi(\mathbf{z})/d\mu}{d\mathcal{S}_\phi(\mathbf{z})/d\mathbf{z}} = 1$$ and $$\frac{d\mathbf{z}}{d\sigma} = -\frac{d\mathcal{S}_\phi(\mathbf{z})/d\sigma}{d\mathcal{S}_\phi(\mathbf{z})/d\mathbf{z}} = \frac{\mathbf{z}-\mu}{\sigma}$$.
+
+#### Using Cumulative Distribution Function
+
+The CDF can be used as a standardization function by using the property that for a random variable $$\mathbf{z}$$, the random variable $$\mathbf{y} = F_\phi(\mathbf{z})$$ has the uniform distribution on $$[0,1]$$ where $$F_\phi$$ is the CDF.
     
     
     
