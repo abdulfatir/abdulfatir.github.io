@@ -36,10 +36,13 @@ $$
 Implicit Reparameterization eliminates the restrictive requirement of an invertible $$\mathcal{S}_\phi(\mathbf{z})$$.
 
 <center>
-<figure>
-  <img style="display: box; margin: auto; width: 30%; height: 30%;" 
-       src="{{site.url}}images/blogs/implicit.png" alt="Implicit Reparameterization"/>
-</figure>
+  <figure>
+    <img style="display: box; margin: auto; width: 30%; height: 30%;" 
+         src="{{site.url}}images/blogs/implicit.png" alt="Implicit Reparameterization"/>
+    <figcaption align='center'>
+      Figure 1.
+    </figcaption>
+  </figure>
 </center>
 
 $$
@@ -51,8 +54,8 @@ $$
 
 $$
     \begin{align}
-        \frac{d\mathcal{S}_\phi(\mathbf{z})}{d\phi} = \frac{d\varepsilon}{d\phi} &= 0\\
-        \frac{\partial\mathcal{S}_\phi(\mathbf{z})}{\partial\mathbf{z}}\frac{d\mathbf{z}}{d\phi} + \frac{\partial\mathcal{S}_\phi(\mathbf{z})}{\partial\phi} &= 0
+        \frac{d\mathcal{S}_\phi(\mathbf{z})}{d\phi} = \frac{d\varepsilon}{d\phi} &= 0\tag{1}\\
+        \frac{\partial\mathcal{S}_\phi(\mathbf{z})}{\partial\mathbf{z}}\frac{d\mathbf{z}}{d\phi} + \frac{\partial\mathcal{S}_\phi(\mathbf{z})}{\partial\phi} &= 0\tag{2}
     \end{align}
 $$
 
@@ -61,6 +64,8 @@ $$
     \nabla_\phi\mathbf{z} = -(\nabla_\mathbf{z}\mathcal{S}_\phi(\mathbf{z}))^{-1}\nabla_\phi\mathcal{S}_\phi(\mathbf{z})
     \end{align}
 $$
+
+where Eq. (1) uses the fact that the total derivative of noise with respect to the distribution parameters is 0 and Eq. (2) applies the multivariate chain rule based on Figure 1.
 
 ### Examples
 #### Normal Distribution
