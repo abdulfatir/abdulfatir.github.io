@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Normalizing Flows: Planar and Radial Flows"
-excerpt: A normalizing flow is a great tool that can transform simple probability distributions into very complex ones by applying a series of invertible functions to samples from the simple distribution. This post explores two simple flows introduced by Rezende et. al. –– Planar Flow and Radial Flow.
+excerpt: A normalizing flow is a great tool that can transform simple probability distributions into very complex ones by applying a series of invertible functions to samples from the simple distribution. This post explores two simple flows introduced by Rezende and Mohamed (2015) –– Planar Flow and Radial Flow.
 ---
 
 <script type="text/x-mathjax-config">
@@ -17,7 +17,7 @@ Simple distributions (e.g., Gaussian) are often used as likelihood distributions
 
 ### Distribution of a Simple Transformation of a RV
 
-Before jumping into normalizing flows, let's consider a simple univariate distribution $p(x)=2x$ with support $x\in[0,1]$. Define a function $y = f(x) = x^2$. Note that $f(x)$ is monotonically increasing in $[0,1]$. What is the PDF of the variable $y$?
+Before jumping into normalizing flows, let's consider a simple univariate distribution $p(x)=2x$ with support $x\in[0,1]$. Define a function $y = f(x) = x^2$. Note that $f(x)$ is monotonically increasing in $[0,1]$. What is the PDF of the random variable $y$?
 
 We can compute $p(y)$ using the CDFs as follows.
 
@@ -52,7 +52,7 @@ $$
 
 where the second equality comes from the inverse-function theorem.
 
-Rezende et. al. proposed two different families of invertible transformations: planar flow and radial flow.
+Rezende and Mohamed (2015) proposed two different families of invertible transformations: planar flow and radial flow.
 
 ## Planar Flow
 
@@ -61,13 +61,13 @@ Planar flows use functions of form
 $$
 \begin{align}
 f(\mathbf{z}) = \mathbf{z} + \mathbf{u}h(\mathbf{w}^\top\mathbf{z} + b)
-\tag{2}
+\tag{2}\label{eq:planarfn}
 \end{align}
 $$
 
 where $\mathbf{u},\mathbf{w}\in \mathbb{R}^d$, $b \in \mathbb{R}$, and $h$ is an element-wise non-linearity such as $\tanh$.
 
-The Jacobian is defined as follows.
+The Jacobian is then given by
 
 $$
 \begin{align*}
@@ -80,7 +80,7 @@ Now, using the matrix determinant lemma
 $$
 \begin{align*}
 \det\frac{\partial f(\mathbf{z})}{\partial \mathbf{z}} &= (1 + h'(\mathbf{w}^\top\mathbf{z} + b)\mathbf{w}^\top\mathbf{I}^{-1}\mathbf{u})\det(\mathbf{I})\\
-&=(1 + h'(\mathbf{w}^\top\mathbf{z} + b)\mathbf{w}^\top\mathbf{u})\tag{3}\label{eq:planarjacob}
+&=(1 + h'(\mathbf{w}^\top\mathbf{z} + b)\mathbf{w}^\top\mathbf{u})\tag{3}\label{eq:planar-det}
 \end{align*}
 $$
 
@@ -98,7 +98,7 @@ h(\mathbf{x}) &= \tanh(\mathbf{x})
 \end{align}
 $$
 
-The determinant of the Jacobian can be computed using Eq. ($\ref{eq:planarjacob}$) and the analytic PDF $q_1(\mathbf{y})$ can then be computed using Eq. ($\ref{eq:cov}$).
+The determinant of the Jacobian can be computed using Eq. ($\ref{eq:planar-det}$) and the analytic PDF $q_1(\mathbf{y})$ can then be computed using Eq. ($\ref{eq:cov}$).
 
 ```python
 # Function to compute q0(z)
@@ -130,14 +130,14 @@ def det_J(z):
     return det
 ```
 
-Let's see how applying $f$ to points in a uniform grid moves them in the 2D space.
+Let's see how applying $f$ (Eq. $\ref{eq:planarfn}$) to points in a uniform grid moves them in the 2D space.
 
 <center>
   <figure>
     <img style="display: box; margin: auto; width: 80%; height: 80%;" 
          src="{{site.base}}/images/blogs/nf/planar-points.png" alt="Planar Flow Points"/>
     <figcaption align='center'>
-      Figure 1.
+    <b>Figure 1.</b>
     </figcaption>
   </figure>
 </center>
@@ -151,7 +151,7 @@ Let's plot the analytic density $q_0(\mathbf{z})$ along with the empirical densi
     <img style="display: box; margin: auto; width: 30%; height: 30%;" 
          src="{{site.base}}/images/blogs/nf/planar-q0-emp.png" alt="q0 emp"/>
     <figcaption align='center'>
-      Analytic and empirical densities $q_0(\mathbf{z})$
+    <b>Figure 2.</b>  Analytic and empirical densities $q_0(\mathbf{z})$
     </figcaption>
   </figure>
 </center>
@@ -165,14 +165,125 @@ Now, let's plot the analytic density $q_1(\mathbf{y})$ computed using Eq. (\ref{
     <img style="display: box; margin: auto; width: 30%; height: 30%;" 
          src="{{site.base}}/images/blogs/nf/planar-q1-emp.png" alt="q1 emp"/>
     <figcaption align='center'>
-      Analytic and empirical densities $q_1(\mathbf{y})$
+    <b>Figure 3.</b>  Analytic and empirical densities $q_1(\mathbf{y})$
     </figcaption>
   </figure>
 </center>
 
 The analytic and empirical densities look similar. We've transformed a unimodal $q_0(\mathbf{z})$ into a bimodal $q_1(\mathbf{y})$ by applying a one level planar flow. Such functions can be successively applied multiple times to obtain a far more complex distribution.
 
+## Radial Flow
 
+Radial flows use functions of the form
 
-(...to be continued)
+$$
+\begin{align*}
+    f(\mathbf{z}) = \mathbf{z} + \beta h(\alpha,r)(\mathbf{z}-\mathbf{z}_0)
+    \tag{4}\label{eq:radialfn}
+\end{align*}
+$$
 
+where $\alpha \in \mathbb{R}^+$, $\beta \in \mathbb{R}$, $h(\alpha,r) = (\alpha + r)^{-1}$ and $r = \vert\vert\mathbf{z} - \mathbf{z}_0\vert\vert$.
+
+The Jacobian is then given by
+
+$$
+\begin{align*}
+\frac{\partial f(\mathbf{z})}{\partial \mathbf{z}} &= \mathbf{I} + \beta\left((\mathbf{z}-\mathbf{z}_0)h'(\alpha,r)\frac{\partial r}{\partial \mathbf{z}} + h(\alpha,r)\mathbf{I}\right)\\
+&=(1+\beta h(\alpha,r))\mathbf{I} + \beta h'(\alpha,r)(\mathbf{z}-\mathbf{z}_0)\frac{(\mathbf{z}-\mathbf{z}_0)^\top}{||\mathbf{z}-\mathbf{z}_0||}
+\end{align*}
+$$
+
+Let $\gamma = (1+\beta h(\alpha,r))$. Again, using the matrix determinant lemma
+
+$$
+\begin{align*}
+\det\frac{\partial f(\mathbf{z})}{\partial \mathbf{z}} &= \left(1 + \beta h'(\alpha,r)\frac{(\mathbf{z}-\mathbf{z}_0)^\top}{||\mathbf{z}-\mathbf{z}_0||}\frac{\mathbf{I}}{\gamma}(\mathbf{z}-\mathbf{z}_0)\right)\det(\gamma\mathbf{I})\\
+&=\left(\frac{1 + \beta h(\alpha,r) + \beta h'(\alpha,r)||\mathbf{z}-\mathbf{z}_0||}{(1+\beta h(\alpha,r))}\right)(1+\beta h(\alpha,r))^d\\
+&=\left(1 + \beta h(\alpha,r) + \beta h'(\alpha,r)r\right)(1+\beta h(\alpha,r))^{d-1}\tag{5}\label{eq:radial-det}
+\end{align*}
+$$
+
+### Example
+
+Let's look at a specific example for $\mathbf{z}\in\mathbb{R}^2$. We will apply a radial flow to $\mathbf{z}$ to get $\mathbf{y} = f(\mathbf{z})$.
+
+$$
+\begin{align}
+q_0(\mathbf{z}) &= \mathcal{N}(\mathbf{z};\mathbf{0},\mathbf{I})\\
+\mathbf{z}_0 &= \begin{bmatrix}1 & 0\end{bmatrix}^\top\\
+\alpha &= 2\\
+\beta &= 5
+\end{align}
+$$
+
+The determinant of the Jacobian can be computed using Eq. ($\ref{eq:radial-det}$) and the analytic PDF $q_1(\mathbf{y})$ can then be computed using Eq. ($\ref{eq:cov}$).
+
+```python
+z0 = np.array([1, 0])
+a = 2
+b = 5
+def h(r):
+    return 1/(a+r)
+def h_prime(r):
+    return -1/(a+r) ** 2
+def f(z):
+    r = LA.norm(z - z0, axis=1).reshape(-1, 1)
+    y = z + b * h(r) * (z - z0)
+    return y
+def det_J(z):
+    n_dims = z.shape[1]
+    r = LA.norm(z - z0, axis=1).reshape(-1, 1)
+    tmp = 1 + b * h(r)
+    det = (tmp + b * h_prime(r) * r) * tmp ** (n_dims - 1)
+    return det
+```
+
+Let's see how applying $f$ (Eq. $\ref{eq:radialfn}$) to points in a uniform grid moves them in the 2D space.
+
+<center>
+  <figure>
+    <img style="display: box; margin: auto; width: 80%; height: 80%;" 
+         src="{{site.base}}/images/blogs/nf/radial-points.png" alt="Planar Flow Points"/>
+    <figcaption align='center'>
+      <b>Figure 4.</b>
+    </figcaption>
+  </figure>
+</center>
+
+Let's plot the analytic density $q_0(\mathbf{z})$ along with the empirical density by plotting a 2D histogram of samples from $q_0(\mathbf{z})$.
+
+<center>
+  <figure>
+    <img style="display: box; margin: auto; width: 30%; height: 30%;" 
+         src="{{site.base}}/images/blogs/nf/radial-q0.png" alt="q0"/>
+    <img style="display: box; margin: auto; width: 30%; height: 30%;" 
+         src="{{site.base}}/images/blogs/nf/radial-q0-emp.png" alt="q0 emp"/>
+    <figcaption align='center'>
+      <b>Figure 5.</b> Analytic and empirical densities $q_0(\mathbf{z})$
+    </figcaption>
+  </figure>
+</center>
+
+Finally, let's plot the analytic density $q_1(\mathbf{y})$ computed using Eq. (\ref{eq:cov}) along with the empirical density of $\mathbf{y}$.
+
+<center>
+  <figure>
+    <img style="display: box; margin: auto; width: 30%; height: 30%;" 
+         src="{{site.base}}/images/blogs/nf/radial-q1.png" alt="q1"/>
+    <img style="display: box; margin: auto; width: 30%; height: 30%;" 
+         src="{{site.base}}/images/blogs/nf/radial-q1-emp.png" alt="q1 emp"/>
+    <figcaption align='center'>
+      <b>Figure 6.</b> Analytic and empirical densities $q_1(\mathbf{y})$
+    </figcaption>
+  </figure>
+</center>
+
+Not all functions of the forms given in Eqs. ($\ref{eq:planarfn}$) and ($\ref{eq:radialfn}$) are invertible. Some conditions need to be satisfied for them to be invertible. (See appendix in [1])
+
+The complete code used in this post can be found in [this repository](https://github.com/abdulfatir/normalizing-flows).
+
+## References
+
+[1] Rezende, D.J. and Mohamed, S., 2015. Variational inference with normalizing flows. arXiv preprint [arXiv:1505.05770](https://arxiv.org/abs/1505.05770).   
+[2] Blog posts [1](http://akosiorek.github.io/ml/2018/04/03/norm_flows.html) and [2](https://casmls.github.io/general/2016/09/25/normalizing-flows.html).
