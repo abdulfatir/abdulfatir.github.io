@@ -101,12 +101,76 @@ $$
 The determinant of the Jacobian can be computed using Eq. ($\ref{eq:planarjacob}$) and the analytic PDF $q_1(\mathbf{y})$ can then be computed using Eq. ($\ref{eq:cov}$).
 
 ```python
-import numpy as np
-import matplotlib
-import matplotlib.pylab as plt
-import itertools
+# Function to compute q0(z)
+def mvn_pdf(X, mu=np.array([[0, 0]]), sig=np.array([[1, 0.], [0., 1]])):
+    import numpy.linalg as LA
+    sqrt_det_2pi_sig = np.sqrt(2 * np.pi * LA.det(sig))
+    sig_inv = LA.inv(sig)
+    X = X[:, None, :] - mu[None, :, :]
+    return np.exp(-np.matmul(np.matmul(X, np.expand_dims(sig_inv, 0)),
+                  (X.transpose(0, 2, 1))) / 2) / sqrt_det_2pi_sig
 ```
 
+Let's set up the required functions.
+
+```python
+w = np.array([5., 0])
+u = np.array([1., 0])
+b = 0
+def h(x):
+    return np.tanh(x)
+def h_prime(x):
+    return 1 - np.tanh(x) ** 2
+def f(z):
+    y = z + np.dot(h(np.dot(z, w) + b).reshape(-1,1), u.reshape(1,-1))
+    return y
+def det_J(z):
+    psi = h_prime(np.dot(z, w) + b).reshape(-1,1) * w
+    det = np.abs(1 + np.dot(psi, u.reshape(-1,1)))
+    return det
+```
+
+Let's see how applying $f$ to points in a uniform grid moves them in the 2D space.
+
+<center>
+  <figure>
+    <img style="display: box; margin: auto; width: 80%; height: 80%;" 
+         src="{{site.base}}/images/blogs/nf/planar-points.png" alt="Planar Flow Points"/>
+    <figcaption align='center'>
+      Figure 1.
+    </figcaption>
+  </figure>
+</center>
+
+Let's plot the analytic density $q_0(\mathbf{z})$ along with the empirical density by plotting a 2D histogram of samples from $q_0(\mathbf{z})$.
+
+<center>
+  <figure>
+    <img style="display: box; margin: auto; width: 30%; height: 30%;" 
+         src="{{site.base}}/images/blogs/nf/planar-q0.png" alt="q0"/>
+    <img style="display: box; margin: auto; width: 30%; height: 30%;" 
+         src="{{site.base}}/images/blogs/nf/planar-q0-emp.png" alt="q0 emp"/>
+    <figcaption align='center'>
+      Analytic and empirical densities $q_0(\mathbf{z})$
+    </figcaption>
+  </figure>
+</center>
+
+Now, let's plot the analytic density $q_1(\mathbf{y})$ computed using Eq. (\ref{eq:cov}) along with the empirical density of $\mathbf{y}$.
+
+<center>
+  <figure>
+    <img style="display: box; margin: auto; width: 30%; height: 30%;" 
+         src="{{site.base}}/images/blogs/nf/planar-q1.png" alt="q1"/>
+    <img style="display: box; margin: auto; width: 30%; height: 30%;" 
+         src="{{site.base}}/images/blogs/nf/planar-q1-emp.png" alt="q1 emp"/>
+    <figcaption align='center'>
+      Analytic and empirical densities $q_1(\mathbf{y})$
+    </figcaption>
+  </figure>
+</center>
+
+The analytic and empirical densities look similar. We've transformed a unimodal $q_0(\mathbf{z})$ into a bimodal $q_1(\mathbf{y})$ by applying a one level planar flow. Such functions can be successively applied multiple times to obtain a far more complex distribution.
 
 
 
