@@ -13,7 +13,7 @@ excerpt: A normalizing flow is a great tool that can transform simple probabilit
   });
 </script>
 
-Simple distributions (e.g., Gaussian) are often used as likelihood distributions. However, the true distribution is often far from this simple distribution and this results in issues such as blurry reconstructions in the case of images. Latent variable models such as VAEs often set the prior distribution $p(\mathbf{z})$ to a factorial multivariate Gaussian distribution. Such a simplistic assumption hampers the model in multiple ways. For instance, this does not allow a multi-modal latent space distribution. Normalizing Flows allow transformation of samples from a simple distribution (subsequently denoted by $q_0$) to samples from a complex distribution by applying a series of invertible flows.
+Simple distributions (e.g., Gaussian) are often used as likelihood distributions. However, the true distribution is often far from this simple distribution and this results in issues such as blurry reconstructions in the case of images. Latent variable models such as VAEs often set the prior distribution $p(\mathbf{z})$ to a factorial multivariate Gaussian distribution. Such a simplistic assumption hampers the model in multiple ways. For instance, this does not allow a multi-modal latent space distribution. Normalizing Flows allow transformation of samples from a simple distribution (subsequently denoted by $q_0$) to samples from a complex distribution by applying a series of invertible functions.
 
 ### Distribution of a Simple Transformation of a RV
 
@@ -40,15 +40,16 @@ F_{X}(\sqrt{y}) &= \int_{0}^{\sqrt{y}} p(x) dx\\
 \end{align}
 $$
 
-and finally differentiating w.r.t. $y$ we get $\frac{d(y)}{dy} = 1$ which means that $p(y) = \mathcal{U}(0,1)$.
+differentiating w.r.t. $y$ we get $\frac{d(y)}{dy} = 1$ which means that $p(y) = \mathcal{U}(0,1)$.
 
 ### Change of Variables
 
 The method described above can be extended to multivariate distributions $q_0(\mathbf{z})$ and smooth invertible mappings $f: \mathbb{R}^d\Rightarrow\mathbb{R}^d$. Samples $\mathbf{z} \sim q_0(\mathbf{z})$ can be transformed using $f$ to give $\mathbf{y}=f(\mathbf{z})$. The PDF of $\mathbf{y}$ is given by 
 
 $$
-q_1(\mathbf{y}) = q_0(\mathbf{z})\left|\det \frac{\partial f^{-1}}{\partial \mathbf{y}}\right| = q_0(\mathbf{z})\left|\det \frac{\partial f}{\partial \mathbf{z}}\right|^{-1}
+q_1(\mathbf{y}) = q_0(\mathbf{z})\left|\det \frac{\partial f^{-1}}{\partial \mathbf{y}}\right| = q_0(\mathbf{z})\left|\det \frac{\partial f}{\partial \mathbf{z}}\right|^{-1}\tag{1}\label{eq:cov}
 $$
+
 where the second equality comes from the inverse-function theorem.
 
 Rezende et. al. proposed two different families of invertible transformations: planar flow and radial flow.
@@ -58,9 +59,10 @@ Rezende et. al. proposed two different families of invertible transformations: p
 Planar flows use functions of form
 
 $$
-\begin{align*}
+\begin{align}
 f(\mathbf{z}) = \mathbf{z} + \mathbf{u}h(\mathbf{w}^\top\mathbf{z} + b)
-\end{align*}
+\tag{2}
+\end{align}
 $$
 
 where $\mathbf{u},\mathbf{w}\in \mathbb{R}^d$, $b \in \mathbb{R}$, and $h$ is an element-wise non-linearity such as $\tanh$.
@@ -78,9 +80,35 @@ Now, using the matrix determinant lemma
 $$
 \begin{align*}
 \det\frac{\partial f(\mathbf{z})}{\partial \mathbf{z}} &= (1 + h'(\mathbf{w}^\top\mathbf{z} + b)\mathbf{w}^\top\mathbf{I}^{-1}\mathbf{u})\det(\mathbf{I})\\
-&=(1 + h'(\mathbf{w}^\top\mathbf{z} + b)\mathbf{w}^\top\mathbf{u})
+&=(1 + h'(\mathbf{w}^\top\mathbf{z} + b)\mathbf{w}^\top\mathbf{u})\tag{3}\label{eq:planarjacob}
 \end{align*}
 $$
+
+### Example
+
+Let's look at a specific example for $\mathbf{z}\in\mathbb{R}^2$. We will apply a planar flow to $\mathbf{z}$ to get $\mathbf{y} = f(\mathbf{z})$.
+
+$$
+\begin{align}
+q_0(\mathbf{z}) &= \mathcal{N}(\mathbf{z};\mathbf{0},\mathbf{I})\\
+\mathbf{w} &= \begin{bmatrix}5 & 0\end{bmatrix}^\top\\
+\mathbf{u} &= \begin{bmatrix}1 & 0\end{bmatrix}^\top\\
+b &= 0\\
+h(\mathbf{x}) &= \tanh(\mathbf{x})
+\end{align}
+$$
+
+The determinant of the Jacobian can be computed using Eq. ($\ref{eq:planarjacob}$) and the analytic PDF $q_1(\mathbf{y})$ can then be computed using Eq. ($\ref{eq:cov}$).
+
+```python
+import numpy as np
+import matplotlib
+import matplotlib.pylab as plt
+import itertools
+```
+
+
+
 
 (...to be continued)
 
