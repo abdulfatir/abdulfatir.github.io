@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-{% include_relative ./about_snippet.md %}
+{% include about_snippet.md %}
 
 ### Other Interests
 

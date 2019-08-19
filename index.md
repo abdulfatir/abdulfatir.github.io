@@ -10,7 +10,7 @@ title: Home
 * **[Dec 2017]**: Joined Dr. [Harold Soh](https://haroldsoh.com/)'s lab at NUS.
 * **[Aug 2017]**: Joined NUS School of Computing as a PhD Student.
 
-{% include_relative ./about_snippet.md %}
+{% include about_snippet.md %}
 
 ### Contact me
 
