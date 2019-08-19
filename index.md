@@ -5,8 +5,8 @@ title: Home
 
 # News and Updates
 
-* **[Aug 2019]**: Won a Research Achievement Award for 2018/19.
-* **[Nov 2018]**: Our paper on [learning disentangled representations in VAEs using a hyperprior](https://arxiv.org/abs/1809.04497) got accepted at [AAAI-2019](https://aaai.org/Conferences/AAAI-19/) (16.2% acc. rate).
+* **[Aug 2019]**: Won a NUS-SOC Research Achievement Award for 2018/19.
+* **[Nov 2018]**: Our [paper](https://arxiv.org/abs/1809.04497) on *learning disentangled representations in VAEs using a hyperprior* got accepted at [AAAI-2019](https://aaai.org/Conferences/AAAI-19/) (Acc. rate: 16.2%).
 * **[Dec 2017]**: Joined Dr. [Harold Soh](https://haroldsoh.com/)'s lab at NUS.
 * **[Aug 2017]**: Joined NUS School of Computing as a PhD Student.
 
