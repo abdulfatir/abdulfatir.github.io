@@ -1,6 +1,4 @@
-# About
-
-I am a second year PhD student at the [School of Computing](https://www.comp.nus.edu.sg/), National University of Singapore, advised by Dr. [Harold Soh](https://haroldsoh.com/). I primarily work on deep generative models. Currently, I am working on learning disentangled representations, their implications and use cases. For details, please take a look at my [CV]({{site.base}}/files/abdulfatir_cv.pdf) and my [Github profile](https://github.com/abdulfatir).
+I am a third year PhD student at the [School of Computing](https://www.comp.nus.edu.sg/), National University of Singapore, advised by Dr. [Harold Soh](https://haroldsoh.com/). I primarily work on deep generative models. For details, please take a look at my [CV]({{site.base}}/files/abdulfatir_cv.pdf) and my [Github profile](https://github.com/abdulfatir).
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
