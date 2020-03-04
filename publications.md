@@ -18,7 +18,7 @@ permalink: /publications/
          <a class="btn btn-outline-success btn-sm" data-toggle="collapse" href="#cvpr20abstract" role="button" aria-expanded="false" aria-controls="cvpr20abstract">Abstract</a>
          <a href="https://arxiv.org/abs/1909.07425" role="button" class="btn btn-outline-success btn-sm">Preprint</a>
          <a href="#" role="button" class="btn btn-outline-success btn-sm disabled" aria-disabled="true">Code (coming soon)</a>
-         <div class="collapse" id="cvpr20abstract">
+         <div class="collapse" id="cvpr20abstract" style="padding: 5px;">
             <div class="card border-success mb-3">
                <div class="card-header">Abstract</div>
                <div class="card-body">
@@ -45,7 +45,7 @@ permalink: /publications/
          <a class="btn btn-outline-success btn-sm" data-toggle="collapse" href="#aaai19abstract" role="button" aria-expanded="false" aria-controls="aaai19abstract">Abstract</a>
          <a href="https://arxiv.org/abs/1809.04497" role="button" class="btn btn-outline-success btn-sm">Paper</a> <a href="https://github.com/crslab/CHyVAE" role="button" class="btn btn-outline-success btn-sm">Code</a> <a href="https://github.com/crslab/correlated-ellipses" role="button" class="btn btn-outline-success btn-sm">Dataset</a>
          <a class="btn btn-outline-success btn-sm" href="{{ site.base }}/files/bib/aaai19cite.txt" target="_blank" role="button">Cite</a>
-         <div class="collapse" id="aaai19abstract">
+         <div class="collapse" id="aaai19abstract" style="padding: 5px;">
             <div class="card border-success mb-3">
                <div class="card-header">Abstract</div>
                <div class="card-body">

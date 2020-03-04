@@ -1,27 +1,45 @@
 I am a third year PhD student at the [School of Computing](https://www.comp.nus.edu.sg/), National University of Singapore, advised by Dr. [Harold Soh](https://haroldsoh.com/). I primarily work on deep generative models. For details, please take a look at my [CV](https://drive.google.com/open?id=1T9tMY1NQQTTFE2sIYXjuVDUIufE5xXB6) and my [Github profile](https://github.com/abdulfatir).
 
 <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Helvetica, Arial, sans-serif;font-size:12px;padding:5px 10px;overflow:hidden;word-break:normal;color:#777;text-align: center;}
-.tg th{font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:normal;padding:5px 10px;overflow:hidden;word-break:normal;}
-.tg .tg-xldj{border-color:inherit;text-align:left}
+.logotext {
+  font-family:Helvetica, Arial, sans-serif;
+  font-size:12px;
+  font-weight:normal;
+  padding:5px 10px;
+  overflow:hidden;
+  color:#777;
+  text-align: center;
+  word-break:normal;
+  }
 </style>
 
-<table>
-  <tr class="tg">
-    <th><a href="https://www.comp.nus.edu.sg/" target="_blank"><img style="width: auto; height: auto; max-height: 80px;" 
-        src="{{site.base}}/images/logos/nus.jpg" alt="NUS Logo"/></a></th>
-    <th><a href="https://www.iitr.ac.in/" target="_blank"><img style="width: auto; height: auto; max-height: 80px;" 
-        src="{{site.base}}/images/logos/iitr.jpg" alt="IITR Logo"/></a></th>
-    <th><a href="https://summerofcode.withgoogle.com/" target="_blank"><img style="width: auto; height: auto; max-height: 80px;" 
-        src="{{site.base}}/images/logos/gsoc.png" alt="GSoC Logo"/></a></th>
-  </tr>
-  <tr class="tg">
-    <td>NUS SoC<br/>2017 - Present</td>
-    <td>IIT Roorkee<br/>2013 - 2017</td>
-    <td>GSoC<br/>Summer 2016, 2017</td>
-  </tr>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 logotext">
+      <a href="https://www.comp.nus.edu.sg/" target="_blank"><img style="width: auto; height: auto; max-height: 80px;" 
+        src="{{site.base}}/images/logos/nus.jpg" alt="NUS Logo"/></a>
+    </div>
+    <div class="col-md-2 logotext">
+      <a href="https://www.iitr.ac.in/" target="_blank"><img style="width: auto; height: auto; max-height: 80px;" 
+        src="{{site.base}}/images/logos/iitr.jpg" alt="IITR Logo"/></a>
+    </div>
+    <div class="col-md-2 logotext">
+      <a href="https://summerofcode.withgoogle.com/" target="_blank"><img style="width: auto; height: auto; max-height: 80px;" 
+        src="{{site.base}}/images/logos/gsoc.png" alt="GSoC Logo"/></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 logotext">
+      NUS SoC<br/>2017 - Present
+    </div>
+    <div class="col-md-2 logotext">
+      IIT Roorkee<br/>2013 - 2017
+    </div>
+    <div class="col-md-2 logotext">
+      GSoC<br/>Summer 2016, 2017
+    </div>
+  </div>
+</div>
 
 ### More Information
 
