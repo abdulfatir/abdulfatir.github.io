@@ -18,25 +18,17 @@ I am a third year PhD student at the [School of Computing](https://www.comp.nus.
     <div class="col-md-2 logotext">
       <a href="https://www.comp.nus.edu.sg/" target="_blank"><img style="width: auto; height: auto; max-height: 80px;" 
         src="{{site.base}}/images/logos/nus.jpg" alt="NUS Logo"/></a>
+      <br /> NUS SoC<br/>2017 - Present
     </div>
     <div class="col-md-2 logotext">
       <a href="https://www.iitr.ac.in/" target="_blank"><img style="width: auto; height: auto; max-height: 80px;" 
         src="{{site.base}}/images/logos/iitr.jpg" alt="IITR Logo"/></a>
+      <br /> IIT Roorkee<br/>2013 - 2017
     </div>
     <div class="col-md-2 logotext">
       <a href="https://summerofcode.withgoogle.com/" target="_blank"><img style="width: auto; height: auto; max-height: 80px;" 
         src="{{site.base}}/images/logos/gsoc.png" alt="GSoC Logo"/></a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 logotext">
-      NUS SoC<br/>2017 - Present
-    </div>
-    <div class="col-md-2 logotext">
-      IIT Roorkee<br/>2013 - 2017
-    </div>
-    <div class="col-md-2 logotext">
-      GSoC<br/>Summer 2016, 2017
+      <br /> GSoC<br/>Summer 2016, 2017
     </div>
   </div>
 </div>
