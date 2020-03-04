@@ -44,7 +44,7 @@ permalink: /publications/
          <br />
          <a class="btn btn-outline-success btn-sm" data-toggle="collapse" href="#aaai19abstract" role="button" aria-expanded="false" aria-controls="aaai19abstract">Abstract</a>
          <a href="https://arxiv.org/abs/1809.04497" role="button" class="btn btn-outline-success btn-sm">Paper</a> <a href="https://github.com/crslab/CHyVAE" role="button" class="btn btn-outline-success btn-sm">Code</a> <a href="https://github.com/crslab/correlated-ellipses" role="button" class="btn btn-outline-success btn-sm">Dataset</a>
-         <a class="btn btn-outline-success btn-sm" data-toggle="collapse" href="{{ site.base }}/files/bib/aaai19cite.bib" role="button">Cite</a>
+         <a class="btn btn-outline-success btn-sm" href="{{ site.base }}/files/bib/aaai19cite.txt" target="_blank" role="button">Cite</a>
          <div class="collapse" id="aaai19abstract">
             <div class="card border-success mb-3">
                <div class="card-header">Abstract</div>
