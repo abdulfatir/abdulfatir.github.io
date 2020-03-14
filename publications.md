@@ -13,11 +13,11 @@ permalink: /publications/
          <br />
          <b>Abdul Fatir Ansari</b>, Jonathan Scarlett, Harold Soh.
          <br />
-         <i>Conference on Computer Vision and Pattern Recognition (CVPR) 2020</i>
+         <i>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2020</i>
          <br />
          <a class="btn btn-outline-success btn-sm" data-toggle="collapse" href="#cvpr20abstract" role="button" aria-expanded="false" aria-controls="cvpr20abstract">Abstract</a>
          <a href="https://arxiv.org/abs/1909.07425" role="button" class="btn btn-outline-success btn-sm">Preprint</a>
-         <a href="#" role="button" class="btn btn-outline-success btn-sm disabled" aria-disabled="true">Code (coming soon)</a>
+         <a href="https://github.com/crslab/OCFGAN" role="button" class="btn btn-outline-success btn-sm">Code</a>
          <div class="collapse" id="cvpr20abstract" style="padding: 5px;">
             <div class="card border-success mb-3">
                <div class="card-header">Abstract</div>
@@ -43,7 +43,7 @@ permalink: /publications/
          <i>AAAI Conference on Artificial Intelligence (AAAI) 2019</i>
          <br />
          <a class="btn btn-outline-success btn-sm" data-toggle="collapse" href="#aaai19abstract" role="button" aria-expanded="false" aria-controls="aaai19abstract">Abstract</a>
-         <a href="https://arxiv.org/abs/1809.04497" role="button" class="btn btn-outline-success btn-sm">Paper</a> <a href="https://github.com/crslab/CHyVAE" role="button" class="btn btn-outline-success btn-sm">Code</a> <a href="https://github.com/crslab/correlated-ellipses" role="button" class="btn btn-outline-success btn-sm">Dataset</a>
+         <a href="https://www.aaai.org/ojs/index.php/AAAI/article/view/4185" role="button" class="btn btn-outline-success btn-sm">Paper</a> <a href="https://github.com/crslab/CHyVAE" role="button" class="btn btn-outline-success btn-sm">Code</a> <a href="https://github.com/crslab/correlated-ellipses" role="button" class="btn btn-outline-success btn-sm">Dataset</a>
          <a class="btn btn-outline-success btn-sm" href="{{ site.base }}/files/bib/aaai19cite.txt" target="_blank" role="button">Cite</a>
          <div class="collapse" id="aaai19abstract" style="padding: 5px;">
             <div class="card border-success mb-3">
