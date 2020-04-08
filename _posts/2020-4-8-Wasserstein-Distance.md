@@ -40,6 +40,16 @@ $$
 
 The treatment in this post will be a non-rigorous one. Please refer to [1] for a rigorous proof.
 
+<center>
+  <figure>
+    <img style="display: box; margin: auto; width: 60%; height: 60%;" 
+         src="{{site.base}}/images/blogs/w1/mongemap.png" alt="Optimal Transport Map"/>
+    <figcaption align='center'>
+      <b>Figure 1. Optimal transport map $T$ from $\mu$ to $\nu$.</b>
+    </figcaption>
+  </figure>
+</center>
+
 ## Kantorovich Duality
 
 We first remove the $\gamma \in \Gamma(\mu, \nu)$ constraint from Eq. ($\ref{eq:w1primal}$) and add it as a supremum instead.
