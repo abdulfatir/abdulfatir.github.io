@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Monte Carlo Sampling using Langevin Dynamics"
-excerpt: The 1-Wasserstein distance is a popular integral probability metric. In this post, the dual form of the 1-Wasserstein distance is derived from its primal form.
+excerpt: Langevin Monte Carlo is a class of Markov Chain Monte Carlo algorithms that generate samples from a probability distribution of interest by simulating the Langevin Equation. This post explores the basics of Langevin Monte Carlo.
 ---
 
 <script type="text/x-mathjax-config">
