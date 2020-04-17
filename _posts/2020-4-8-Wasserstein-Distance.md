@@ -130,8 +130,8 @@ Since $f^c$ is 1-Lipschitz, for all $x$ and $y$ we have
 
 $$
 \begin{align}
-&|f^c(x) - f^c(y)| \leq 1\cdot\|x-y\|\\
-&\implies -1\cdot\|x-y\| \leq f^c(x) - f^c(y) \leq 1\cdot\|x-y\|\\
+&|f^c(y) - f^c(x)| \leq 1\cdot\|y-x\|\\
+&\implies -1\cdot\|x-y\| \leq f^c(y) - f^c(x) \leq 1\cdot\|x-y\|\\
 &\implies - f^c(x) \leq \|x-y\| - f^c(y)\tag{8}\label{ineq:lip}
 \end{align}
 $$
