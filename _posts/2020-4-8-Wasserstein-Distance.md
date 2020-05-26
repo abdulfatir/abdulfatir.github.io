@@ -93,20 +93,20 @@ How do we now find such $f$ and $g$ the maximize the r.h.s. of Eq. ($\ref{eq:w1d
 Let's assume that we have a function $f$ and we want to find the optimal $g$ corresponding to $f$ that achieves the supremum in Eq. ($\ref{eq:w1dualgeneral}$). We know that $\forall x,y \, f(x) + g(y) \leq \|x-y\|$. We can write this as follows
 
 $$
-g(y) \leq \inf_{x} \|x-y\| - f(x)
+g(y) \leq \inf_{x} \left\{\|x-y\| - f(x)\right\}
 $$
 
 because if $g(y) \leq \|x-y\| - f(x) \, \forall x,y$, then it must be true for the $x$ that minimizes the r.h.s. (which also makes sure that it is true for all other $x$s). Since, $g(y) \leq \inf_{x} \|x-y\| - f(x)$, the best we can do to maximize the r.h.s. in Eq. ($\ref{eq:w1dualgeneral}$) is set 
 
 $$
-g(y) = \inf_{x} \|x-y\| - f(x)
+g(y) = \inf_{x} \left\{\|x-y\| - f(x)\right\}
 \tag{6}\label{eq:ctransform1}
 $$.
 
 Eq. ($\ref{eq:ctransform1}$) gives us a function which is called the $c$-transform of $f$ and is often denoted by $f^c$,
 
 $$
-f^c(y) = g(y) = \inf_{x} \|x-y\| - f(x)
+f^c(y) = g(y) = \inf_{x} \left\{\|x-y\| - f(x)\right\}
 $$
 
 It can be shown that $f^{cc} = f$. We can now write Eq. ($\ref{eq:w1dualgeneral}$) as
@@ -140,8 +140,8 @@ Since Eq. ($\ref{ineq:lip}$) is true for all $x$ and $y$,
 
 $$
 \begin{align}
-&\implies-f^c(x) \leq \inf_{y} \|x-y\| - f^c(y)\\
-&\implies-f^c(x) \leq \underset{f^{cc}(x)}{\underbrace{\inf_{y} \|x-y\| - f^c(y)}} \leq -f^c(x)\tag{9}\label{ineq:sandwich}
+&\implies-f^c(x) \leq \inf_{y} \left\{\|x-y\| - f^c(y)\right\}\\
+&\implies-f^c(x) \leq \underset{f^{cc}(x)}{\underbrace{\inf_{y} \left\{\|x-y\| - f^c(y)\right\}}} \leq -f^c(x)\tag{9}\label{ineq:sandwich}
 \end{align}
 $$
 
