@@ -1,4 +1,4 @@
-I am a third year PhD student at the [School of Computing](https://www.comp.nus.edu.sg/), National University of Singapore, advised by Dr. [Harold Soh](https://haroldsoh.com/). I primarily work on deep generative models. For details, please take a look at my [CV](https://drive.google.com/open?id=1T9tMY1NQQTTFE2sIYXjuVDUIufE5xXB6) and my [Github profile](https://github.com/abdulfatir).
+I am a fourth year PhD student at the [School of Computing](https://www.comp.nus.edu.sg/), National University of Singapore, advised by Dr. [Harold Soh](https://haroldsoh.com/). I primarily work on deep generative models. For details, please take a look at my [CV](https://drive.google.com/open?id=1T9tMY1NQQTTFE2sIYXjuVDUIufE5xXB6) and my [Github profile](https://github.com/abdulfatir).
 
 <style type="text/css">
 .logotext {
