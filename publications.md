@@ -30,7 +30,7 @@ permalink: /publications/
          </div>
       </div>
    </div>
-
+   <br />
    <div class="row">
       <div class="col-md-12">
          <span class="text-info">A Characteristic Function Approach to Deep Implicit Generative Modeling</span>
