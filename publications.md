@@ -9,6 +9,30 @@ permalink: /publications/
    <h2>2020</h2>
    <div class="row">
       <div class="col-md-12">
+         <span class="text-info">Refining Deep Generative Models via Wasserstein Gradient Flows</span>
+         <br />
+         <b>Abdul Fatir Ansari</b>, Ming Liang Ang, Harold Soh.
+         <br />
+         <i>Under Review</i>
+         <br />
+         <a class="btn btn-outline-success btn-sm" data-toggle="collapse" href="#ansari21abstract" role="button" aria-expanded="false" aria-controls="ansari21abstract">Abstract</a>
+         <a href="https://arxiv.org/abs/2012.00780" role="button" class="btn btn-outline-success btn-sm">Preprint</a>
+         <!-- <a href="#" role="button" class="btn btn-outline-success btn-sm">Code</a> -->
+         <div class="collapse" id="ansari21abstract" style="padding: 5px;">
+            <div class="card border-success mb-3">
+               <div class="card-header">Abstract</div>
+               <div class="card-body">
+                  <div class="card-text text-justify font-italic" style="font-size:0.8rem;">
+                  Deep generative modeling has seen impressive advances in recent years, to the point where it is now commonplace to see simulated samples (e.g., images) that closely resemble real-world data. However, generation quality is generally inconsistent for any given model and can vary dramatically between samples. We introduce Discriminator Gradient flow (DGflow), a new technique that improves generated samples via the gradient flow of entropy-regularized f-divergences between the real and the generated data distributions. The gradient flow takes the form of a non-linear Fokker-Plank equation, which can be easily simulated by sampling from the equivalent McKean-Vlasov process. By refining inferior samples, our technique avoids wasteful sample rejection used by previous methods (DRS and MH-GAN). Compared to existing works that focus on specific GAN variants, we show our refinement approach can be applied to GANs with vector-valued critics and even other deep generative models such as VAEs and Normalizing Flows. Empirical results on multiple synthetic, image, and text datasets demonstrate that DGflow leads to significant improvement in the quality of generated samples for a variety of generative models, outperforming the state-of-the-art Discriminator Optimal Transport (DOT) and Discriminator Driven Latent Sampling (DDLS) methods.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col-md-12">
          <span class="text-info">A Characteristic Function Approach to Deep Implicit Generative Modeling</span>
          <br />
          <b>Abdul Fatir Ansari</b>, Jonathan Scarlett, Harold Soh.
@@ -16,7 +40,7 @@ permalink: /publications/
          <i>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2020</i>
          <br />
          <a class="btn btn-outline-success btn-sm" data-toggle="collapse" href="#cvpr20abstract" role="button" aria-expanded="false" aria-controls="cvpr20abstract">Abstract</a>
-         <a href="https://arxiv.org/abs/1909.07425" role="button" class="btn btn-outline-success btn-sm">Preprint</a>
+         <a href="https://arxiv.org/abs/1909.07425" role="button" class="btn btn-outline-success btn-sm">Paper</a>
          <a href="https://github.com/crslab/OCFGAN" role="button" class="btn btn-outline-success btn-sm">Code</a>
          <div class="collapse" id="cvpr20abstract" style="padding: 5px;">
             <div class="card border-success mb-3">
