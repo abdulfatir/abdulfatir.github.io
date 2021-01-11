@@ -14,7 +14,7 @@ excerpt: Gradient flows have been a popular tool in the analysis of PDEs. Recent
 </script>
 ------------------
 <span style="font-size: 80%; color: gray;">
-**Note**: This article is a gentle (?) introduction to the concept of gradient flows in the Wasserstein space. The target audience are researchers working in the area of machine learning and not mathematicians (Forgive my non-rigorous soul, father!). The "flow" of arguments in this article follows the excellent [overview of gradient flows](https://arxiv.org/abs/1609.03890) by [Filippo Santambrogio](http://math.univ-lyon1.fr/~santambrogio/) and [this lecture](https://www.youtube.com/watch?v=zzGBxAqJV0Q) by [Brittany Hamfeldt](https://web.njit.edu/~bdfroese/).
+**Note**: This article is a gentle introduction to the concept of gradient flows in the Wasserstein space. The target audience are researchers working in the area of machine learning, not mathematicians (Forgive my non-rigorous soul, father!). The "flow" of arguments in this article follows the excellent [overview of gradient flows](https://arxiv.org/abs/1609.03890) by [Filippo Santambrogio](http://math.univ-lyon1.fr/~santambrogio/) and [this lecture](https://www.youtube.com/watch?v=zzGBxAqJV0Q) by [Brittany Hamfeldt](https://web.njit.edu/~bdfroese/).
 </span>
 
 ------------------
