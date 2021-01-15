@@ -13,7 +13,7 @@ permalink: /publications/
          <br />
          <b>Abdul Fatir Ansari</b>, Ming Liang Ang, Harold Soh.
          <br />
-         <i>Under Review</i>
+         <i>International Conference on Learning Representations (ICLR) 2021</i>
          <br />
          <a class="btn btn-outline-success btn-sm" data-toggle="collapse" href="#ansari21abstract" role="button" aria-expanded="false" aria-controls="ansari21abstract">Abstract</a>
          <a href="https://arxiv.org/abs/2012.00780" role="button" class="btn btn-outline-success btn-sm">Preprint</a>
