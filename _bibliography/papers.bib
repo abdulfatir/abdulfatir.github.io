@@ -1,0 +1,45 @@
+---
+---
+
+@inproceedings{ansari2019hyperprior,
+    abbr={AAAI},
+    bibtex_show={true},
+    title={Hyperprior induced unsupervised disentanglement of latent representations},
+    author={Ansari, Abdul Fatir and Soh, Harold},
+    booktitle={Proceedings of the AAAI Conference on Artificial Intelligence,},
+    volume={33},
+    pages={3175--3182},
+    year={2019},
+    abstract={We address the problem of unsupervised disentanglement of latent representations learnt via deep generative models. In contrast to current approaches that operate on the evidence lower bound (ELBO), we argue that statistical independence in the latent space of VAEs can be enforced in a principled hierarchical Bayesian manner. To this effect, we augment the standard VAE with an inverse-Wishart (IW) prior on the covariance matrix of the latent code. By tuning the IW parameters, we are able to encourage (or discourage) independence in the learnt latent dimensions. Extensive experimental results on a range of datasets (2DShapes, 3DChairs, 3DFaces and CelebA) show our approach to outperform the β-VAE and is competitive with the state-of-the-art FactorVAE. Our approach achieves significantly better disentanglement and reconstruction on a new dataset (CorrelatedEllipses) which introduces correlations between the factors of variation.},
+    code={https://github.com/crslab/CHyVAE},
+    supp={https://github.com/crslab/correlated-ellipses},
+    arxiv={1809.04497},
+    pubtype={Spotlight}
+}
+
+@article{Ansari2020ACF,
+  abbr={CVPR},
+  bibtex_show={true},
+  title={A Characteristic Function Approach to Deep Implicit Generative Modeling},
+  author={Abdul Fatir Ansari and Jonathan Scarlett and Harold Soh},
+  journal={IEEE/CVF Conference on Computer Vision and Pattern Recognition,},
+  year={2020},
+  pages={7476-7484},
+  abstract={Implicit Generative Models (IGMs) such as GANs have emerged as effective data-driven models for generating samples, particularly images. In this paper, we formulate the problem of learning an IGM as minimizing the expected distance between characteristic functions. Specifically, we minimize the distance between characteristic functions of the real and generated data distributions under a suitably-chosen weighting distribution. This distance metric, which we term as the characteristic function distance (CFD), can be (approximately) computed with linear time-complexity in the number of samples, in contrast with the quadratic-time Maximum Mean Discrepancy (MMD). By replacing the discrepancy measure in the critic of a GAN with the CFD, we obtain a model that is simple to implement and stable to train. The proposed metric enjoys desirable theoretical properties including continuity and differentiability with respect to generator parameters, and continuity in the weak topology. We further propose a variation of the CFD in which the weighting distribution parameters are also optimized during training; this obviates the need for manual tuning, and leads to an improvement in test power relative to CFD. We demonstrate experimentally that our proposed method outperforms WGAN and MMD-GAN variants on a variety of unsupervised image generation benchmarks.},
+  code={https://github.com/crslab/OCFGAN},
+  arxiv={1909.07425},
+  pubtype={Oral}
+}
+
+@inproceedings{Ansari2021RefiningDG,
+  abbr={ICLR},
+  bibtex_show={true},
+  title={Refining Deep Generative Models via Discriminator Gradient Flow},
+  author={Abdul Fatir Ansari and Ming Liang Ang and Harold Soh},
+  booktitle={International Conference on Learning Representations,},
+  year={2021},
+  abstract={Deep generative modeling has seen impressive advances in recent years, to the point where it is now commonplace to see simulated samples (e.g., images) that closely resemble real-world data. However, generation quality is generally inconsistent for any given model and can vary dramatically between samples. We introduce Discriminator Gradient flow (DGflow), a new technique that improves generated samples via the gradient flow of entropy-regularized f-divergences between the real and the generated data distributions. The gradient flow takes the form of a non-linear Fokker-Plank equation, which can be easily simulated by sampling from the equivalent McKean-Vlasov process. By refining inferior samples, our technique avoids wasteful sample rejection used by previous methods (DRS & MH-GAN). Compared to existing works that focus on specific GAN variants, we show our refinement approach can be applied to GANs with vector-valued critics and even other deep generative models such as VAEs and Normalizing Flows. Empirical results on multiple synthetic, image, and text datasets demonstrate that DGflow leads to significant improvement in the quality of generated samples for a variety of generative models, outperforming the state-of-the-art Discriminator Optimal Transport (DOT) and Discriminator Driven Latent Sampling (DDLS) methods.},
+  code={https://github.com/clear-nus/DGflow},
+  arxiv={2012.00780},
+  blog={https://clear-nus.github.io/blog/dgflow}
+}

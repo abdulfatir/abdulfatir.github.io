@@ -1,17 +1,11 @@
 ---
 layout: post
 title: "Introduction to Gradient Flows in the 2-Wasserstein Space"
-excerpt: Gradient flows have been a popular tool in the analysis of PDEs. Recently, various gradient flows have been studied in machine learning literature. This article is an introduction to the concept of gradient flows in the 2-Wasserstein space.
+date: 2020-12-24 21:01:00
+comments: true
+description: Gradient flows have been a popular tool in the analysis of PDEs. Recently, various gradient flows have been studied in machine learning literature. This article is an introduction to the concept of gradient flows in the 2-Wasserstein space.
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }, TeX: { extensions: ["color.js"] }
-  });
-</script>
 ------------------
 <span style="font-size: 80%; color: gray;">
 **Note**: This article is a gentle introduction to the concept of gradient flows in the Wasserstein space. The target audience are researchers working in the area of machine learning, not mathematicians (Forgive my non-rigorous soul, father!). The "flow" of arguments in this article follows the excellent [overview of gradient flows](https://arxiv.org/abs/1609.03890) by [Filippo Santambrogio](http://math.univ-lyon1.fr/~santambrogio/) and [this lecture](https://www.youtube.com/watch?v=zzGBxAqJV0Q) by [Brittany Hamfeldt](https://web.njit.edu/~bdfroese/).
