@@ -206,6 +206,14 @@ blockquote {
   color: var(--global-text-color);
 }
 
+// Logos
+
+@media only screen and (max-width: 1000px) {
+  #affiliations-logos {
+    display: none;
+  }
+}
+
 // Social (bottom)
 
 .social {
