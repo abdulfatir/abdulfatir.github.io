@@ -6,7 +6,7 @@ description: PhD student at <a href="https://clear-nus.github.io">CLeAR, NUS</a>
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.webp
   address:
 
 logos: true
