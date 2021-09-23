@@ -43,13 +43,6 @@ blockquote {
   text-align: center;
 }
 
-.logocaption {
-  font-size: 0.70rem;
-  margin-top: 0.1rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
 // Citation
 .citation, .citation-number {
   color: var(--global-theme-color);
@@ -207,6 +200,38 @@ blockquote {
 }
 
 // Logos
+// From: https://github.com/abhshkdz/abhshkdz.github.io/blob/master/css/main_1603233531.css
+
+#affiliations-logos .helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+#affiliations-logos .logo-wrap {
+  height: 50px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#affiliations-logos .logo-wrap img {
+  width: auto;
+  height: auto;
+  max-height: 50px;
+  background: none;
+  background-color: white;
+}
+
+#affiliations-logos .logo-desc {
+  text-align: center;
+  font-size: 12px;
+  // margin-top: 50px;
+}
+
+#affiliations-logos {
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
 
 @media only screen and (max-width: 1000px) {
   #affiliations-logos {
