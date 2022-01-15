@@ -15,8 +15,12 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a fifth year PhD student at the [School of Computing](https://www.comp.nus.edu.sg/), National University of Singapore, advised by Dr. [Harold Soh](https://haroldsoh.com/). Prior to joining NUS, I graduated with a bachelor's degree in Civil Engineering from IIT Roorkee. At IIT Roorkee, I worked at Computer Vision Lab and [CBTB Lab](http://compbio.iitr.ac.in/). During my years as an undergrad, I participated in Google Summer of Code twice (in 2016 and 2017 and worked with Dr. [Tomas Helikar](http://helikarlab.org/)).
+Hi! I am Fatir, a final year PhD student at the [School of Computing](https://www.comp.nus.edu.sg/) in the National University of Singapore (NUS). I am advised by Dr. [Harold Soh](https://haroldsoh.com/).
 
-I primarily work on deep generative models. For details, please take a look at my [curriculum vitae](https://drive.google.com/open?id=1T9tMY1NQQTTFE2sIYXjuVDUIufE5xXB6) and my [google scholar page](https://scholar.google.com/citations?user=BZ0EoqIAAAAJ&hl=en).
+**Research**: My general research interest lies in the area of **deep generative models**, encompassing probabilistic generative modeling (both implicit and explicit), variational inference, unsupervised learning, and representation learning. For details about my background and research, please take a look at my <a href="https://drive.google.com/open?id=1T9tMY1NQQTTFE2sIYXjuVDUIufE5xXB6" target="_blank">curriculum vitae</a> and my [google scholar page](https://scholar.google.com/citations?user=BZ0EoqIAAAAJ&hl=en).
+
+**Previously**: I was a research intern at Amazon AWS AI Labs where I worked with Bernie Wang, Tim Januschowski, and Alex Smola. I received my bachelor's degree in Civil Engineering from IIT Roorkee. During my undergrad years, I participated in Google Summer of Code in 2016 and 2017.
+
+**I am on the 2022 job market** looking for industry research scientist positions. Please feel free to contact me if you're interested.
 
 **Contact**: abdulfatir [at] u.nus.edu
