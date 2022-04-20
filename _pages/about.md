@@ -21,6 +21,4 @@ Hi! I am Fatir, a final year PhD student at the [School of Computing](https://ww
 
 **Previously**: I was a research intern at Amazon AWS AI Labs where I worked with Bernie Wang, Tim Januschowski, and Alex Smola. I received my bachelor's degree in Civil Engineering from IIT Roorkee. During my undergrad years, I participated in Google Summer of Code in 2016 and 2017.
 
-**I am on the 2022 job market** looking for industry research scientist positions. Please feel free to contact me if you're interested.
-
 **Contact**: abdulfatir [at] u.nus.edu
