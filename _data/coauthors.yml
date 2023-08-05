@@ -9,6 +9,8 @@
 "Wang":
   - firstname: ["Bernie", "B."]
     url: https://www.mit.edu/~ywang02/
+  - firstname: ["Hao", "H."]
+    url: http://wanghao.in/
 
 "Turkmen":
   - firstname: ["Ali Caner", "A. C."]
@@ -17,3 +19,7 @@
 "Smola":
   - firstname: ["Alex", "A."]
     url: https://alex.smola.org/
+
+"Heng":
+  - firstname: ["Alvin", "A."]
+    url: https://scholar.google.com/citations?user=fHFKbUMAAAAJ&hl=en
