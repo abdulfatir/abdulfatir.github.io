@@ -5,3 +5,15 @@
 "Scarlett":
   - firstname: ["Jonathan", "J."]
     url: https://www.comp.nus.edu.sg/~scarlett/
+
+"Wang":
+  - firstname: ["Bernie", "B."]
+    url: https://www.mit.edu/~ywang02/
+
+"Turkmen":
+  - firstname: ["Ali Caner", "A. C."]
+    url: https://caner.io/
+
+"Smola":
+  - firstname: ["Alex", "A."]
+    url: https://alex.smola.org/
