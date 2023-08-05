@@ -2,7 +2,9 @@
 layout: post
 title: "Monte Carlo Sampling using Langevin Dynamics"
 date: 2020-04-17 21:01:00
-comments: true
+disqus_comments: true
+featured: true
+tags: sampling
 description: Langevin Monte Carlo is a class of Markov Chain Monte Carlo algorithms that generate samples from a probability distribution of interest by simulating the Langevin Equation. This post explores the basics of Langevin Monte Carlo.
 ---
 

@@ -2,7 +2,8 @@
 layout: post
 title: "Normalizing Flows: Planar and Radial Flows"
 date: 2018-09-28 21:01:00
-comments: true
+disqus_comments: true
+tags: generative-models normalizing-flows
 description: A normalizing flow is a great tool that can transform simple probability distributions into very complex ones by applying a series of invertible functions to samples from the simple distribution. This post explores two simple flows introduced by Rezende and Mohamed (2015) –– Planar Flow and Radial Flow.
 ---
 

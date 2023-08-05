@@ -1,0 +1,12 @@
+github_users:
+  - abdulfatir
+
+github_repos:
+  - awslabs/gluonts
+  - clear-nus/OCFGAN
+  - clear-nus/DGflow
+  - abdulfatir/REDSDS
+  - clear-nus/NCDSSM
+  - abdulfatir/sampling-methods-numpy
+  - abdulfatir/twitter-sentiment-analysis
+  - abdulfatir/gan-metrics-pytorch

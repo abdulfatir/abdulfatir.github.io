@@ -2,7 +2,8 @@
 layout: post
 title: "1-Wasserstein distance: Kantorovich–Rubinstein duality"
 date: 2020-04-08 21:01:00
-comments: true
+disqus_comments: true
+tags: probability-metrics optimal-transport
 description: The 1-Wasserstein distance is a popular integral probability metric. In this post, the dual form of the 1-Wasserstein distance is derived from its primal form.
 ---
 

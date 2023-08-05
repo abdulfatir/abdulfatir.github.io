@@ -2,7 +2,8 @@
 layout: post
 title: Implicit Reparameterization Gradients
 date: 2018-09-21 21:01:00
-comments: true
+disqus_comments: true
+tags: generative-models variational-inference
 description: Backpropagation through a stochastic node is an important problem in deep learning. Implicit reparameterization gradients go beyond the reparameterization trick to address the problem of efficient gradient computation in such a setting.
 ---
 
