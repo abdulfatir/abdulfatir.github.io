@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Scientist at AWS AI Labs
+subtitle: <b>Machine Learning Scientist</b> at AWS AI Labs
 
 profile:
   align: right
@@ -16,7 +16,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi! I am Fatir, an Applied Scientist at AWS AI Labs in Berlin, where I work on time series forecasting, log analytics, and generative models. I also contribute to [GluonTS](https://ts.gluon.ai/).
+Hi! I am Fatir, an ML Scientist at AWS AI Labs in Berlin, where I work on time series forecasting, log analytics, and generative models. I also contribute to [GluonTS](https://ts.gluon.ai/).
 
 **Research**: My general research interest lies in the areas of **generative models**, encompassing probabilistic generative modeling (both implicit and explicit), variational inference, unsupervised learning, and representation learning. For details about my background and research, please take a look at my <a href="https://drive.google.com/open?id=1T9tMY1NQQTTFE2sIYXjuVDUIufE5xXB6" target="_blank">curriculum vitae</a> and my [google scholar page](https://scholar.google.com/citations?user=BZ0EoqIAAAAJ&hl=en).
 
