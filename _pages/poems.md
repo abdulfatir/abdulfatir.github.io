@@ -7,7 +7,7 @@ nav: true
 nav_order: 4
 ---
 
-Some peoms that I have written in the past.
+Some poems that I have written in the past.
 
 ### of longing and belonging
 <h6 style="color:#828282">Jul 2022</h6>
