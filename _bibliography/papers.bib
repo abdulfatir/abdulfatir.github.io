@@ -42,7 +42,8 @@
   abstract={Deep generative modeling has seen impressive advances in recent years, to the point where it is now commonplace to see simulated samples (e.g., images) that closely resemble real-world data. However, generation quality is generally inconsistent for any given model and can vary dramatically between samples. We introduce Discriminator Gradient flow (DGflow), a new technique that improves generated samples via the gradient flow of entropy-regularized f-divergences between the real and the generated data distributions. The gradient flow takes the form of a non-linear Fokker-Plank equation, which can be easily simulated by sampling from the equivalent McKean-Vlasov process. By refining inferior samples, our technique avoids wasteful sample rejection used by previous methods (DRS & MH-GAN). Compared to existing works that focus on specific GAN variants, we show our refinement approach can be applied to GANs with vector-valued critics and even other deep generative models such as VAEs and Normalizing Flows. Empirical results on multiple synthetic, image, and text datasets demonstrate that DGflow leads to significant improvement in the quality of generated samples for a variety of generative models, outperforming the state-of-the-art Discriminator Optimal Transport (DOT) and Discriminator Driven Latent Sampling (DDLS) methods.},
   code={https://github.com/clear-nus/DGflow},
   arxiv={2012.00780},
-  blog={https://clear-nus.github.io/blog/dgflow}
+  blog={https://clear-nus.github.io/blog/dgflow},
+  selected={true}
 }
 
 @inproceedings{ansari2021deep,    
@@ -69,6 +70,7 @@
   arxiv={2301.11308},
   pubtype={Oral},
   note={Oral Presentation (top 2.4%)},
+  selected={true}
 }
 
 @inproceedings{kollovieh2023predict,
@@ -79,7 +81,8 @@
   booktitle   = {Neural Information Processing Systems},
   abbr        = {NeurIPS},
   bibtex_show = {true},
-  arxiv       = {2307.11494}
+  arxiv       = {2307.11494},
+  selected={true}
 }
 
 @inproceedings{heng2023generative,
@@ -105,6 +108,8 @@
   url={https://openreview.net/forum?id=gerNCVqqtR},
   code={https://github.com/amazon-science/chronos-forecasting},
   bibtex_show = {true},
+  selected={true},
+  note={3.5K Github stars and 500M+ Hugging Face model downloads as of Aug 2025}
 }
 
 @phdthesis{ansari2022deep,
@@ -125,6 +130,7 @@
   arxiv={2407.14129},
   year={2024},
   abbr={arXiv},
+  bibtex_show = {true},
   abstract={Remarkable progress in the development of Deep Learning Weather Prediction (DLWP) models positions them to become competitive with traditional numerical weather prediction (NWP) models. Indeed, a wide number of DLWP architectures -- based on various backbones, including U-Net, Transformer, Graph Neural Network (GNN), and Fourier Neural Operator (FNO) -- have demonstrated their potential at forecasting atmospheric states. However, due to differences in training protocols, forecast horizons, and data choices, it remains unclear which (if any) of these methods and architectures are most suitable for weather forecasting and for future model development. Here, we step back and provide a detailed empirical analysis, under controlled conditions, comparing and contrasting the most prominent DLWP models, along with their backbones. We accomplish this by predicting synthetic two-dimensional incompressible Navier-Stokes and real-world global weather dynamics. In terms of accuracy, memory consumption, and runtime, our results illustrate various tradeoffs. For example, on synthetic data, we observe favorable performance of FNO; and on the real-world WeatherBench dataset, our results demonstrate the suitability of ConvLSTM and SwinTransformer for short-to-mid-ranged forecasts. For long-ranged weather rollouts of up to 365 days, we observe superior stability and physical soundness in architectures that formulate a spherical data representation, i.e., GraphCast and Spherical FNO. In addition, we observe that all of these model backbones "saturate," i.e., none of them exhibit so-called neural scaling, which highlights an important direction for future work on these and related models.}
 }
 
@@ -136,6 +142,7 @@ year={2025},
 url={https://openreview.net/forum?id=teE4pl9ftK},
 arxiv={2412.01786},
 abbr={ICLR},
+bibtex_show = {true},
 abstract={Generative models that satisfy hard constraints are critical in many scientific and engineering applications, where physical laws or system requirements must be strictly respected. Many existing constrained generative models, especially those developed for computer vision, rely heavily on gradient information, which is often sparse or computationally expensive in some fields, e.g., partial differential equations (PDEs). In this work, we introduce a novel framework for adapting pre-trained, unconstrained flow-matching models to satisfy constraints exactly in a zero-shot manner without requiring expensive gradient computations or fine-tuning. Our framework, ECI sampling, alternates between extrapolation (E), correction (C), and interpolation (I) stages during each iterative sampling step of flow matching sampling to ensure accurate integration of constraint information while preserving the validity of the generation. We demonstrate the effectiveness of our approach across various PDE systems, showing that ECI-guided generation strictly adheres to physical constraints and accurately captures complex distribution shifts induced by these constraints. Empirical results demonstrate that our framework consistently outperforms baseline approaches in various zero-shot constrained generation tasks and also achieves competitive results in the regression tasks without additional fine-tuning.}
 }
 
@@ -147,6 +154,7 @@ abstract={Generative models that satisfy hard constraints are critical in many s
   url = 	 {https://proceedings.mlr.press/v258/arango25a.html},
   abstract = 	 {Covariates provide valuable information on external factors that influence time series and are critical in many real-world time series forecasting tasks. For example, in retail, covariates may indicate promotions or peak dates such as holiday seasons that heavily influence demand forecasts. Recent advances in pretraining large language model architectures for time series forecasting have led to highly accurate forecasters. However, the majority of these models do not readily use covariates as they are often specific to a certain task or domain. This paper introduces a new method to incorporate covariates into pretrained time series forecasting models. Our proposed approach incorporates covariate information into pretrained forecasting models through modular blocks that inject past and future covariate information, without necessarily modifying the pretrained model in consideration. In order to evaluate our approach, we introduce a benchmark composed of 32 different synthetic datasets with varying dynamics to evaluate the effectivity of forecasting models with covariates. Extensive evaluations on both synthetic and real datasets show that our approach effectively incorporates covariate information into pretrained models, outperforming existing baselines.},
   abbr={AISTATS},
+  bibtex_show = {true},
   arxiv={2503.12107}
 }
 
@@ -158,6 +166,7 @@ abstract={Generative models that satisfy hard constraints are critical in many s
   url={https://openreview.net/forum?id=B6WalMoQJW},
   abbr={ICML},
   arxiv={2412.05244},
+  bibtex_show = {true},
   abstract={How to best develop foundational models for time series forecasting remains an important open question. Tokenization is a crucial consideration in this effort: what is an effective discrete vocabulary for a real-valued sequential input? To address this question, we develop WaveToken, a wavelet-based tokenizer that allows models to learn complex representations directly in the space of time-localized frequencies. Our method first scales and decomposes the input time series, then thresholds and quantizes the wavelet coefficients, and finally pre-trains an autoregressive model to forecast coefficients for the forecast horizon. By decomposing coarse and fine structures in the inputs, wavelets provide an eloquent and compact language for time series forecasting that simplifies learning. Empirical results on a comprehensive benchmark, including 42 datasets for both in-domain and zero-shot settings, show that WaveToken: i) provides better accuracy than recently proposed foundation models for forecasting while using a much smaller vocabulary (1024 tokens), and performs on par or better than modern deep learning models trained specifically on each dataset; and ii) exhibits superior generalization capabilities, achieving the best average rank across all datasets for three complementary metrics. In addition, we show that our method can easily capture complex temporal patterns of practical relevance that are challenging for other recent pre-trained models, including trends, sparse spikes, and non-stationary time series with varying frequencies evolving over time.}
 }
 
@@ -168,6 +177,7 @@ abstract={Generative models that satisfy hard constraints are critical in many s
   year={2025},
   arxiv={2506.03128},
   abbr={arXiv},
+  bibtex_show = {true},
   abstract={Pretrained time series models, capable of zero-shot forecasting, have demonstrated significant potential in enhancing both the performance and accessibility of time series forecasting. However, existing pretrained models either do not support covariates or fail to incorporate them effectively. We introduce COSMIC, a zero-shot forecasting model that utilizes covariates via in-context learning. To address the challenge of data scarcity, we propose Informative Covariate Augmentation, which enables the training of COSMIC without requiring any datasets that include covariates. COSMIC achieves state-of-the-art performance in zero-shot forecasting, both with and without covariates. Our quantitative and qualitative analysis demonstrates that COSMIC effectively leverages covariates in zero-shot forecasting.}
 }
 
@@ -178,5 +188,6 @@ abstract={Generative models that satisfy hard constraints are critical in many s
   year={2025},
   arxiv={2506.21611},
   abbr={arXiv},
+  bibtex_show = {true},
   abstract={Recently, there has been growing interest in incorporating textual information into foundation models for time series forecasting. However, it remains unclear whether and under what conditions such multimodal integration consistently yields gains. We systematically investigate these questions across a diverse benchmark of 14 forecasting tasks spanning 7 domains, including health, environment, and economics. We evaluate two popular multimodal forecasting paradigms: aligning-based methods, which align time series and text representations; and prompting-based methods, which directly prompt large language models for forecasting. Although prior works report gains from multimodal input, we find these effects are not universal across datasets and models, and multimodal methods sometimes do not outperform the strongest unimodal baselines. To understand when textual information helps, we disentangle the effects of model architectural properties and data characteristics. Our findings highlight that on the modeling side, incorporating text information is most helpful given (1) high-capacity text models, (2) comparatively weaker time series models, and (3) appropriate aligning strategies. On the data side, performance gains are more likely when (4) sufficient training data is available and (5) the text offers complementary predictive signal beyond what is already captured from the time series alone. Our empirical findings offer practical guidelines for when multimodality can be expected to aid forecasting tasks, and when it does not.}
 }
