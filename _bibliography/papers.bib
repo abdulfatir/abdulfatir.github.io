@@ -46,7 +46,7 @@
 }
 
 @inproceedings{ansari2021deep,    
-  author    = {Abdul Fatir Ansari* and Konstantinos Benidis* and Richard Kurle and Ali Caner Turkmen and Harold Soh and Alex Smola and Bernie Wang and Tim Januschowski},    
+  author    = {Abdul Fatir Ansari* and Konstantinos Benidis* and Richard Kurle and Caner Turkmen and Harold Soh and Alex Smola and Yuyang Wang and Tim Januschowski},    
   title     = {Deep Explicit Duration Switching Models for Time Series},    
   abstract =  {Many complex time series can be effectively subdivided into distinct regimes that exhibit persistent dynamics. Discovering the switching behavior and the statistical patterns in these regimes is important for understanding the underlying dynamical system. We propose the Recurrent Explicit Duration Switching Dynamical System (RED-SDS), a flexible model that is capable of identifying both state- and time-dependent switching dynamics. State-dependent switching is enabled by a recurrent state-to-switch connection and an explicit duration count variable is used to improve the time-dependent switching behavior. We demonstrate how to perform efficient inference using a hybrid algorithm that approximates the posterior of the continuous states via an inference network and performs exact inference for the discrete switches and counts. The model is trained by maximizing a Monte Carlo lower bound of the marginal log-likelihood that can be computed efficiently as a byproduct of the inference routine. Empirical results on multiple datasets demonstrate that RED-SDS achieves considerable improvement in time series segmentation and competitive forecasting performance against the state of the art.},
   year      = {2021},    
@@ -73,7 +73,7 @@
 
 @inproceedings{kollovieh2023predict,
   title       = {Predict, Refine, Synthesize: Self-Guiding Diffusion Models for Probabilistic Time Series Forecasting},
-  author      = {Kollovieh*, Marcel and Ansari*, Abdul Fatir and Bohlke-Schneider, Michael and Zschiegner, Jasper and Wang, Hao and Wang, Bernie},
+  author      = {Kollovieh*, Marcel and Ansari*, Abdul Fatir and Bohlke-Schneider, Michael and Zschiegner, Jasper and Wang, Hao and Wang, Yuyang},
   abstract    = {Diffusion models have achieved state-of-the-art performance in generative modeling tasks across various domains. Prior works on time series diffusion models have primarily focused on developing conditional models tailored to specific forecasting or imputation tasks. In this work, we explore the potential of task-agnostic, unconditional diffusion models for several time series applications. We propose TSDiff, an unconditionally trained diffusion model for time series. Our proposed self-guidance mechanism enables conditioning TSDiff for downstream tasks during inference, without requiring auxiliary networks or altering the training procedure. We demonstrate the effectiveness of our method on three different time series tasks: forecasting, refinement, and synthetic data generation. First, we show that TSDiff is competitive with several task-specific conditional forecasting methods (predict). Second, we leverage the learned implicit probability density of TSDiff to iteratively refine the predictions of base forecasters with reduced computational overhead over reverse diffusion (refine). Notably, the generative performance of the model remains intact -- downstream forecasters trained on synthetic samples from TSDiff outperform forecasters that are trained on samples from other state-of-the-art generative time series models, occasionally even outperforming models trained on real data (synthesize).},
   year        = {2023},
   booktitle   = {Neural Information Processing Systems},
@@ -82,26 +82,28 @@
   arxiv       = {2307.11494}
 }
 
-@article{heng2023generative,
+@inproceedings{heng2023generative,
   title={Generative Modeling with Flow-Guided Density Ratio Learning},
   author={Heng, Alvin and Ansari, Abdul Fatir and Soh, Harold},
   abstract={We present Flow-Guided Density Ratio Learning (FDRL), a simple and scalable approach to generative modeling which builds on the stale (time-independent) approximation of the gradient flow of entropy-regularized f-divergences introduced in DGflow. In DGflow, the intractable time-dependent density ratio is approximated by a stale estimator given by a GAN discriminator. This is sufficient in the case of sample refinement, where the source and target distributions of the flow are close to each other. However, this assumption is invalid for generation and a naive application of the stale estimator fails due to the large chasm between the two distributions. FDRL proposes to train a density ratio estimator such that it learns from progressively improving samples during the training process. We show that this simple method alleviates the density chasm problem, allowing FDRL to generate images of dimensions as high as 128×128, as well as outperform existing gradient flow baselines on quantitative benchmarks. We also show the flexibility of FDRL with two use cases. First, unconditional FDRL can be easily composed with external classifiers to perform class-conditional generation. Second, FDRL can be directly applied to unpaired image-to-image translation with no modifications needed to the framework.},
-  journal={arXiv preprint arXiv:2303.03714},
-  year={2023},
-  abbr={arXiv},
+  booktitle={Joint European Conference on Machine Learning and Knowledge Discovery in Databases},
+  year={2024},
+  abbr={ECML PKDD},
   arxiv={2303.03714},
   bibtex_show = {true},
 }
 
 @article{ansari2024chronos,
-  author  = {Ansari, Abdul Fatir and Stella, Lorenzo and Turkmen, Caner and Zhang, Xiyuan, and Mercado, Pedro and Shen, Huibin and Shchur, Oleksandr and Rangapuram, Syama Syndar and Pineda Arango, Sebastian and Kapoor, Shubham and Zschiegner, Jasper and Maddix, Danielle C. and Mahoney, Michael W. and Torkkola, Kari and Gordon Wilson, Andrew and Bohlke-Schneider, Michael and Wang, Yuyang},
-  title   = {{Chronos}: Learning the Language of Time Series},
-  abstract= {We introduce Chronos, a simple yet effective framework for pretrained probabilistic time series models. Chronos tokenizes time series values using scaling and quantization into a fixed vocabulary and trains existing transformer-based language model architectures on these tokenized time series via the cross-entropy loss. We pretrained Chronos models based on the T5 family (ranging from 20M to 710M parameters) on a large collection of publicly available datasets, complemented by a synthetic dataset that we generated via Gaussian processes to improve generalization. In a comprehensive benchmark consisting of 42 datasets, and comprising both classical local models and deep learning methods, we show that Chronos models: (a) significantly outperform other methods on datasets that were part of the training corpus; and (b) have comparable and occasionally superior zero-shot performance on new datasets, relative to methods that were trained specifically on them. Our results demonstrate that Chronos models can leverage time series data from diverse domains to improve zero-shot accuracy on unseen forecasting tasks, positioning pretrained models as a viable tool to greatly simplify forecasting pipelines.},
-  journal = {arXiv preprint arXiv:2403.07815},
-  year    = {2024},
-  abbr    = {arXiv},
-  arxiv   = {2403.07815},
-  code    = {https://github.com/amazon-science/chronos-forecasting},
+  title={Chronos: Learning the Language of Time Series},
+  author={Ansari, Abdul Fatir and Stella, Lorenzo and Turkmen, Caner and Zhang, Xiyuan, and Mercado, Pedro and Shen, Huibin and Shchur, Oleksandr and Rangapuram, Syama Syndar and Pineda Arango, Sebastian and Kapoor, Shubham and Zschiegner, Jasper and Maddix, Danielle C. and Wang, Hao and Mahoney, Michael W. and Torkkola, Kari and Wilson, Andrew Gordon and Bohlke-Schneider, Michael and Wang, Bernie},
+  journal={Transactions on Machine Learning Research},
+  abstract={We introduce Chronos, a simple yet effective framework for pretrained probabilistic time series models. Chronos tokenizes time series values using scaling and quantization into a fixed vocabulary and trains existing transformer-based language model architectures on these tokenized time series via the cross-entropy loss. We pretrained Chronos models based on the T5 family (ranging from 20M to 710M parameters) on a large collection of publicly available datasets, complemented by a synthetic dataset that we generated via Gaussian processes to improve generalization. In a comprehensive benchmark consisting of 42 datasets, and comprising both classical local models and deep learning methods, we show that Chronos models: (a) significantly outperform other methods on datasets that were part of the training corpus; and (b) have comparable and occasionally superior zero-shot performance on new datasets, relative to methods that were trained specifically on them. Our results demonstrate that Chronos models can leverage time series data from diverse domains to improve zero-shot accuracy on unseen forecasting tasks, positioning pretrained models as a viable tool to greatly simplify forecasting pipelines.},
+  issn={2835-8856},
+  year={2024},
+  abbr={TMLR},
+  arxiv={2403.07815},
+  url={https://openreview.net/forum?id=gerNCVqqtR},
+  code={https://github.com/amazon-science/chronos-forecasting},
   bibtex_show = {true},
 }
 
@@ -114,4 +116,67 @@
   html={https://scholarbank.nus.edu.sg/handle/10635/231424},
   note={Dean’s Graduate Research Excellence Award},
   bibtex_show = {true},
+}
+
+@article{karlbauer2024comparing,
+  title={Comparing and contrasting deep learning weather prediction backbones on navier-stokes and atmospheric dynamics},
+  author={Karlbauer, Matthias and Maddix, Danielle C and Ansari, Abdul Fatir and Han, Boran and Gupta, Gaurav and Wang, Yuyang and Stuart, Andrew and Mahoney, Michael W},
+  journal={arXiv preprint arXiv:2407.14129},
+  arxiv={2407.14129},
+  year={2024},
+  abbr={arXiv},
+  abstract={Remarkable progress in the development of Deep Learning Weather Prediction (DLWP) models positions them to become competitive with traditional numerical weather prediction (NWP) models. Indeed, a wide number of DLWP architectures -- based on various backbones, including U-Net, Transformer, Graph Neural Network (GNN), and Fourier Neural Operator (FNO) -- have demonstrated their potential at forecasting atmospheric states. However, due to differences in training protocols, forecast horizons, and data choices, it remains unclear which (if any) of these methods and architectures are most suitable for weather forecasting and for future model development. Here, we step back and provide a detailed empirical analysis, under controlled conditions, comparing and contrasting the most prominent DLWP models, along with their backbones. We accomplish this by predicting synthetic two-dimensional incompressible Navier-Stokes and real-world global weather dynamics. In terms of accuracy, memory consumption, and runtime, our results illustrate various tradeoffs. For example, on synthetic data, we observe favorable performance of FNO; and on the real-world WeatherBench dataset, our results demonstrate the suitability of ConvLSTM and SwinTransformer for short-to-mid-ranged forecasts. For long-ranged weather rollouts of up to 365 days, we observe superior stability and physical soundness in architectures that formulate a spherical data representation, i.e., GraphCast and Spherical FNO. In addition, we observe that all of these model backbones "saturate," i.e., none of them exhibit so-called neural scaling, which highlights an important direction for future work on these and related models.}
+}
+
+@inproceedings{cheng2025gradientfree,
+title={Gradient-Free Generation for Hard-Constrained Systems},
+author={Chaoran Cheng and Boran Han and Danielle C. Maddix and Abdul Fatir Ansari and Andrew Stuart and Michael W. Mahoney and Bernie Wang},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+url={https://openreview.net/forum?id=teE4pl9ftK},
+arxiv={2412.01786},
+abbr={ICLR},
+abstract={Generative models that satisfy hard constraints are critical in many scientific and engineering applications, where physical laws or system requirements must be strictly respected. Many existing constrained generative models, especially those developed for computer vision, rely heavily on gradient information, which is often sparse or computationally expensive in some fields, e.g., partial differential equations (PDEs). In this work, we introduce a novel framework for adapting pre-trained, unconstrained flow-matching models to satisfy constraints exactly in a zero-shot manner without requiring expensive gradient computations or fine-tuning. Our framework, ECI sampling, alternates between extrapolation (E), correction (C), and interpolation (I) stages during each iterative sampling step of flow matching sampling to ensure accurate integration of constraint information while preserving the validity of the generation. We demonstrate the effectiveness of our approach across various PDE systems, showing that ECI-guided generation strictly adheres to physical constraints and accurately captures complex distribution shifts induced by these constraints. Empirical results demonstrate that our framework consistently outperforms baseline approaches in various zero-shot constrained generation tasks and also achieves competitive results in the regression tasks without additional fine-tuning.}
+}
+
+@InProceedings{pmlr-v258-arango25a,
+  title = 	 {ChronosX: Adapting Pretrained Time Series Models with Exogenous Variables},
+  author =       {Arango, Sebastian Pineda and Mercado, Pedro and Kapoor, Shubham and Ansari, Abdul Fatir and Stella, Lorenzo and Shen, Huibin and Senetaire, Hugo and Turkmen, Caner and Shchur, Oleksandr and Maddix, Danielle C. and Bohlke-Schneider, Michael and Wang, Bernie and Rangapuram, Syama Sundar},
+  booktitle = 	 {Proceedings of The 28th International Conference on Artificial Intelligence and Statistics},
+  year = 	 {2025},
+  url = 	 {https://proceedings.mlr.press/v258/arango25a.html},
+  abstract = 	 {Covariates provide valuable information on external factors that influence time series and are critical in many real-world time series forecasting tasks. For example, in retail, covariates may indicate promotions or peak dates such as holiday seasons that heavily influence demand forecasts. Recent advances in pretraining large language model architectures for time series forecasting have led to highly accurate forecasters. However, the majority of these models do not readily use covariates as they are often specific to a certain task or domain. This paper introduces a new method to incorporate covariates into pretrained time series forecasting models. Our proposed approach incorporates covariate information into pretrained forecasting models through modular blocks that inject past and future covariate information, without necessarily modifying the pretrained model in consideration. In order to evaluate our approach, we introduce a benchmark composed of 32 different synthetic datasets with varying dynamics to evaluate the effectivity of forecasting models with covariates. Extensive evaluations on both synthetic and real datasets show that our approach effectively incorporates covariate information into pretrained models, outperforming existing baselines.},
+  abbr={AISTATS},
+  arxiv={2503.12107}
+}
+
+@inproceedings{masserano2025enhancing,
+  title={Enhancing Foundation Models for Time Series Forecasting via Wavelet-based Tokenization},
+  author={Luca Masserano and Abdul Fatir Ansari and Boran Han and Xiyuan Zhang and Christos Faloutsos and Michael W. Mahoney and Andrew Gordon Wilson and Youngsuk Park and Syama Sundar Rangapuram and Danielle C. Maddix and Bernie Wang},
+  booktitle={Forty-second International Conference on Machine Learning},
+  year={2025},
+  url={https://openreview.net/forum?id=B6WalMoQJW},
+  abbr={ICML},
+  arxiv={2412.05244},
+  abstract={How to best develop foundational models for time series forecasting remains an important open question. Tokenization is a crucial consideration in this effort: what is an effective discrete vocabulary for a real-valued sequential input? To address this question, we develop WaveToken, a wavelet-based tokenizer that allows models to learn complex representations directly in the space of time-localized frequencies. Our method first scales and decomposes the input time series, then thresholds and quantizes the wavelet coefficients, and finally pre-trains an autoregressive model to forecast coefficients for the forecast horizon. By decomposing coarse and fine structures in the inputs, wavelets provide an eloquent and compact language for time series forecasting that simplifies learning. Empirical results on a comprehensive benchmark, including 42 datasets for both in-domain and zero-shot settings, show that WaveToken: i) provides better accuracy than recently proposed foundation models for forecasting while using a much smaller vocabulary (1024 tokens), and performs on par or better than modern deep learning models trained specifically on each dataset; and ii) exhibits superior generalization capabilities, achieving the best average rank across all datasets for three complementary metrics. In addition, we show that our method can easily capture complex temporal patterns of practical relevance that are challenging for other recent pre-trained models, including trends, sparse spikes, and non-stationary time series with varying frequencies evolving over time.}
+}
+
+@article{auer2025zero,
+  title={Zero-Shot Time Series Forecasting with Covariates via In-Context Learning},
+  author={Auer, Andreas and Parthipan, Raghul and Mercado, Pedro and Ansari, Abdul Fatir and Stella, Lorenzo and Wang, Bernie and Bohlke-Schneider, Michael and Rangapuram, Syama Sundar},
+  journal={arXiv preprint arXiv:2506.03128},
+  year={2025},
+  arxiv={2506.03128},
+  abbr={arXiv},
+  abstract={Pretrained time series models, capable of zero-shot forecasting, have demonstrated significant potential in enhancing both the performance and accessibility of time series forecasting. However, existing pretrained models either do not support covariates or fail to incorporate them effectively. We introduce COSMIC, a zero-shot forecasting model that utilizes covariates via in-context learning. To address the challenge of data scarcity, we propose Informative Covariate Augmentation, which enables the training of COSMIC without requiring any datasets that include covariates. COSMIC achieves state-of-the-art performance in zero-shot forecasting, both with and without covariates. Our quantitative and qualitative analysis demonstrates that COSMIC effectively leverages covariates in zero-shot forecasting.}
+}
+
+@article{zhang2025does,
+  title={Does Multimodality Lead to Better Time Series Forecasting?},
+  author={Zhang, Xiyuan and Han, Boran and Fang, Haoyang and Ansari, Abdul Fatir and Zhang, Shuai and Maddix, Danielle C and Hu, Cuixiong and Wilson, Andrew Gordon and Mahoney, Michael W and Wang, Hao and others},
+  journal={arXiv preprint arXiv:2506.21611},
+  year={2025},
+  arxiv={2506.21611},
+  abbr={arXiv},
+  abstract={Recently, there has been growing interest in incorporating textual information into foundation models for time series forecasting. However, it remains unclear whether and under what conditions such multimodal integration consistently yields gains. We systematically investigate these questions across a diverse benchmark of 14 forecasting tasks spanning 7 domains, including health, environment, and economics. We evaluate two popular multimodal forecasting paradigms: aligning-based methods, which align time series and text representations; and prompting-based methods, which directly prompt large language models for forecasting. Although prior works report gains from multimodal input, we find these effects are not universal across datasets and models, and multimodal methods sometimes do not outperform the strongest unimodal baselines. To understand when textual information helps, we disentangle the effects of model architectural properties and data characteristics. Our findings highlight that on the modeling side, incorporating text information is most helpful given (1) high-capacity text models, (2) comparatively weaker time series models, and (3) appropriate aligning strategies. On the data side, performance gains are more likely when (4) sufficient training data is available and (5) the text offers complementary predictive signal beyond what is already captured from the time series alone. Our empirical findings offer practical guidelines for when multimodality can be expected to aid forecasting tasks, and when it does not.}
 }

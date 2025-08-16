@@ -7,18 +7,54 @@
     url: https://www.comp.nus.edu.sg/~scarlett/
 
 "Wang":
-  - firstname: ["Bernie", "B."]
+  - firstname: ["Bernie", "B.", "Yuyang", "Y."]
     url: https://www.mit.edu/~ywang02/
   - firstname: ["Hao", "H."]
     url: http://wanghao.in/
 
 "Turkmen":
-  - firstname: ["Ali Caner", "A. C."]
+  - firstname: ["Caner", "C."]
     url: https://caner.io/
+
+"Stella":
+  - firstname: ["Lorenzo", "L."]
+    url: https://lostella.github.io/
+
+"Shen":
+  - firstname: ["Huibin", "H."]
+    url: https://huibinshen.github.io/
 
 "Smola":
   - firstname: ["Alex", "A."]
     url: https://alex.smola.org/
+
+"Zhang":
+  - firstname: ["Xiyuan", "X."]
+    url: https://xiyuanzh.github.io/
+
+"Shchur":
+  - firstname: ["Oleksandr", "O."]
+    url: https://shchur.github.io/
+
+"Maddix":
+  - firstname: ["Danielle", "Danielle C.", "Danielle C", "D. C."]
+    url: https://dcmaddix.github.io/
+
+"Mahoney":
+  - firstname: ["Michael", "Michael W.", "Michael W", "M. W."]
+    url: https://www.stat.berkeley.edu/~mmahoney/
+
+"Han":
+  - firstname: ["Boran", "B"]
+    url: https://boranhan.github.io/
+
+"Wilson":
+  - firstname: ["Andrew", "Andrew Gordon", "A. G.", "Andrew G.", "Andrew G"]
+    url: https://cims.nyu.edu/~andrewgw/
+
+"Stuart":
+  - firstname: ["Andrew", "A."]
+    url: http://stuart.caltech.edu/
 
 "Heng":
   - firstname: ["Alvin", "A."]
