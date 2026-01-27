@@ -31,6 +31,8 @@
 "Zhang":
   - firstname: ["Xiyuan", "X."]
     url: https://xiyuanzh.github.io/
+  - firstname: ["Shuai", "S."]
+    url: https://shuaizhang.tech/
 
 "Shchur":
   - firstname: ["Oleksandr", "O."]
@@ -67,3 +69,23 @@
 "Kollovieh":
   - firstname: ["Marcel", "M."]
     url: https://marcelkollovieh.de/
+
+"Faloutsos":
+  - firstname: ["Christos", "C."]
+    url: https://www.cs.cmu.edu/~christos/
+
+"Yu":
+  - firstname: ["Annan", "A."]
+    url: https://annanyu.com/
+
+"Kayaalp":
+  - firstname: ["Mert", "M."]
+    url: https://mertkayaalp.github.io/
+
+"Cheng":
+  - firstname: ["Chaoran", "C."]
+    url: https://ccr-cheng.github.io/
+
+"Auer":
+  - firstname: ["Andreas", "A."]
+    url: https://apointa.github.io/

@@ -109,7 +109,8 @@
   code={https://github.com/amazon-science/chronos-forecasting},
   bibtex_show = {true},
   selected={true},
-  note={3.5K Github stars and 500M+ Hugging Face model downloads as of Aug 2025}
+  note={4.7K Github stars and 650M+ Hugging Face model downloads as of Jan 2026},
+  blog={https://www.amazon.science/blog/adapting-language-model-architectures-for-time-series-forecasting},
 }
 
 @phdthesis{ansari2022deep,
@@ -190,4 +191,79 @@ abstract={Generative models that satisfy hard constraints are critical in many s
   abbr={arXiv},
   bibtex_show = {true},
   abstract={Recently, there has been growing interest in incorporating textual information into foundation models for time series forecasting. However, it remains unclear whether and under what conditions such multimodal integration consistently yields gains. We systematically investigate these questions across a diverse benchmark of 14 forecasting tasks spanning 7 domains, including health, environment, and economics. We evaluate two popular multimodal forecasting paradigms: aligning-based methods, which align time series and text representations; and prompting-based methods, which directly prompt large language models for forecasting. Although prior works report gains from multimodal input, we find these effects are not universal across datasets and models, and multimodal methods sometimes do not outperform the strongest unimodal baselines. To understand when textual information helps, we disentangle the effects of model architectural properties and data characteristics. Our findings highlight that on the modeling side, incorporating text information is most helpful given (1) high-capacity text models, (2) comparatively weaker time series models, and (3) appropriate aligning strategies. On the data side, performance gains are more likely when (4) sufficient training data is available and (5) the text offers complementary predictive signal beyond what is already captured from the time series alone. Our empirical findings offer practical guidelines for when multimodality can be expected to aid forecasting tasks, and when it does not.}
+}
+
+@article{shchur2025fev,
+  title={fev-bench: A realistic benchmark for time series forecasting},
+  author={Shchur, Oleksandr and Ansari, Abdul Fatir and Turkmen, Caner and Stella, Lorenzo and Erickson, Nick and Guerron, Pablo and Bohlke-Schneider, Michael and Wang, Yuyang},
+  journal={arXiv preprint arXiv:2509.26468},
+  year={2025},
+  arxiv={2509.26468},
+  abbr={arXiv},
+  bibtex_show = {true},
+  abstract={Benchmark quality is critical for meaningful evaluation and sustained progress in time series forecasting, particularly given the recent rise of pretrained models. Existing benchmarks often have narrow domain coverage or overlook important real-world settings, such as tasks with covariates. Additionally, their aggregation procedures often lack statistical rigor, making it unclear whether observed performance differences reflect true improvements or random variation. Many benchmarks also fail to provide infrastructure for consistent evaluation or are too rigid to integrate into existing pipelines. To address these gaps, we propose fev-bench, a benchmark comprising 100 forecasting tasks across seven domains, including 46 tasks with covariates. Supporting the benchmark, we introduce fev, a lightweight Python library for benchmarking forecasting models that emphasizes reproducibility and seamless integration with existing workflows. Usingfev, fev-bench employs principled aggregation methods with bootstrapped confidence intervals to report model performance along two complementary dimensions: win rates and skill scores. We report results on fev-bench for various pretrained, statistical and baseline models, and identify promising directions for future research.}
+}
+
+@inproceedings{yu2025understanding,
+title={Understanding transformers for time series: Rank structure, flow-of-ranks, and compressibility},
+author={Yu, Annan and Maddix, Danielle C and Han, Boran and Zhang, Xiyuan and Ansari, Abdul Fatir and Shchur, Oleksandr and Faloutsos, Christos and Wilson, Andrew Gordon and Mahoney, Michael W and Wang, Yuyang},
+booktitle={The Fourteenth International Conference on Learning Representations},
+year={2026},
+url={https://openreview.net/forum?id=axR2KZwaD3},
+arxiv={2510.03358},
+abbr={ICLR},
+bibtex_show = {true},
+abstract={Transformers are widely used across data modalities, and yet the principles distilled from text models often transfer imperfectly to models trained to other modalities. In this paper, we analyze Transformers through the lens of rank structure. Our focus is on the time series setting, where the structural properties of the data differ remarkably from those of text or vision. We show that time-series embeddings, unlike text or vision, exhibit sharply decaying singular value spectra: small patch sizes and smooth continuous mappings concentrate the data into low-rank subspaces. From this, we prove that the associated Q/K/V projections admit accurate low-rank approximations, and that attention layers become compressible in proportion to the decay of the embedding spectrum. We introduce the concept of flow-of-ranks, a phenomenon by which nonlinear mixing across depth inflates the rank, explaining why early layers are most amenable to compression and why ranks grow with depth. Guided by these theoretical and empirical results, we use these insights to compress Chronos, a large time series foundation model, achieving a reduction of 65% in inference time and 81% in memory, without loss of accuracy. Our findings provide principled guidance for allocating width, depth, and heads in time series foundation models, and for exploiting their inherent compressibility.}
+}
+
+@inproceedings{yu2025implicitbiases,
+title={Understanding the Implicit Biases of Design Choices for Time Series Foundation Models},
+author={Yu, Annan and Maddix, Danielle C and Han, Boran and Zhang, Xiyuan and Ansari, Abdul Fatir and Shchur, Oleksandr and Faloutsos, Christos and Wilson, Andrew Gordon and Mahoney, Michael W and Wang, Yuyang},
+booktitle={The Fourteenth International Conference on Learning Representations},
+year={2026},
+url={https://openreview.net/forum?id=5jkzTzV5Ao},
+arxiv={2510.19236},
+abbr={ICLR},
+bibtex_show = {true},
+abstract={Time series foundation models (TSFMs) are a class of potentially powerful, general-purpose tools for time series forecasting and related temporal tasks, but their behavior is strongly shaped by subtle inductive biases in their design. Rather than developing a new model and claiming that it is better than existing TSFMs, e.g., by winning on existing well-established benchmarks, our objective is to understand how the various ``knobs'' of the training process affect model quality. Using a mix of theory and controlled empirical evaluation, we identify several design choices (patch size, embedding choice, training objective, etc.) and show how they lead to implicit biases in fundamental model properties (temporal behavior, geometric structure, how aggressively or not the model regresses to the mean, etc.); and we show how these biases can be intuitive or very counterintuitive, depending on properties of the model and data. We also illustrate in a case study on outlier handling how multiple biases can interact in complex ways; and we discuss implications of our results for learning the bitter lesson and building TSFMs.}
+}
+
+@inproceedings{kayaalp2026testtime,
+title={Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting},
+author={Kayaalp, Mert and Turkmen, Caner and Shchur, Oleksandr and Mercado, Pedro and Ansari, Abdul Fatir and Bohlke-Schneider, Michael and Wang, Bernie},
+booktitle={The Fourteenth International Conference on Learning Representations},
+year={2026},
+url={https://openreview.net/forum?id=iqUMjxfDNH},
+arxiv={2510.06419},
+abbr={ICLR},
+bibtex_show = {true},
+abstract={Is bigger always better for time series foundation models? With the question in mind, we explore an alternative to training a single, large monolithic model: building a portfolio of smaller, pretrained forecasting models. By applying ensembling or model selection over these portfolios, we achieve competitive performance on large-scale benchmarks using much fewer parameters. We explore strategies for designing such portfolios and find that collections of specialist models consistently outperform portfolios of independently trained generalists. Remarkably, we demonstrate that post-training a base model is a compute-effective approach for creating sufficiently diverse specialists, and provide evidences that ensembling and model selection are more compute-efficient than test-time fine-tuning.}
+}
+
+@inproceedings{
+zhang2025mitra,
+title={Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models},
+author={Xiyuan Zhang and Danielle C. Maddix and Junming Yin and Nick Erickson and Abdul Fatir Ansari and Boran Han and Shuai Zhang and Leman Akoglu and Christos Faloutsos and Michael W. Mahoney and Cuixiong Hu and Huzefa Rangwala and George Karypis and Bernie Wang},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+year={2025},
+url={https://openreview.net/forum?id=t8YRsWY6HM},
+arxiv={2510.21204},
+abbr={NeurIPS},
+bibtex_show = {true},
+abstract={Since the seminal work of TabPFN, research on tabular foundation models (TFMs) based on in-context learning (ICL) has challenged long-standing paradigms in machine learning. Without seeing any real-world data, models pretrained on purely synthetic datasets generalize remarkably well across diverse datasets, often using only a moderate number of in-context examples. This shifts the focus in tabular machine learning from model architecture design to the design of synthetic datasets, or, more precisely, to the prior distributions that generate them. Yet the guiding principles for prior design remain poorly understood. This work marks the first attempt to address the gap. We systematically investigate and identify key properties of synthetic priors that allow pretrained TFMs to generalize well. Based on these insights, we introduce Mitra, a TFM trained on a curated mixture of synthetic priors selected for their diversity, distinctiveness, and performance on real-world tabular data. Mitra consistently outperforms state-of-the-art TFMs, such as TabPFNv2 and TabICL, across both classification and regression benchmarks, with better sample efficiency.}
+}
+
+@article{ansari2025chronos,
+  title={Chronos-2: From univariate to universal forecasting},
+  author={Ansari, Abdul Fatir and Shchur, Oleksandr and K{\"u}ken, Jaris and Auer, Andreas and Han, Boran and Mercado, Pedro and Rangapuram, Syama Sundar and Shen, Huibin and Stella, Lorenzo and Zhang, Xiyuan and others},
+  journal={arXiv preprint arXiv:2510.15821},
+  year={2025},
+  arxiv={2510.15821},
+  abbr={arXiv},
+  bibtex_show = {true},
+  abstract={Pretrained time series models have enabled inference-only forecasting systems that produce accurate predictions without task-specific training. However, existing approaches largely focus on univariate forecasting, limiting their applicability in real-world scenarios where multivariate data and covariates play a crucial role. We present Chronos-2, a pretrained model capable of handling univariate, multivariate, and covariate-informed forecasting tasks in a zero-shot manner. Chronos-2 employs a group attention mechanism that facilitates in-context learning (ICL) through efficient information sharing across multiple time series within a group, which may represent sets of related series, variates of a multivariate series, or targets and covariates in a forecasting task. These general capabilities are achieved through training on synthetic datasets that impose diverse multivariate structures on univariate series. Chronos-2 delivers state-of-the-art performance across three comprehensive benchmarks: fev-bench, GIFT-Eval, and Chronos Benchmark II. On fev-bench, which emphasizes multivariate and covariate-informed forecasting, Chronos-2's universal ICL capabilities lead to substantial improvements over existing models. On tasks involving covariates, it consistently outperforms baselines by a wide margin. Case studies in the energy and retail domains further highlight its practical advantages. The in-context learning capabilities of Chronos-2 establish it as a general-purpose forecasting model that can be used "as is" in real-world forecasting pipelines.},
+  code={https://github.com/amazon-science/chronos-forecasting},
+  selected={true},
+  note={4.7K Github stars and 15M+ Hugging Face model downloads as of Jan 2026},
+  blog={https://www.amazon.science/blog/introducing-chronos-2-from-univariate-to-universal-forecasting},
 }
