@@ -236,4 +236,49 @@
         "@context": "https://schema.org"
     }
     </script>
+
+    <!-- Enhanced Person Schema for academic identity -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "{{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}",
+        "givenName": "{{ site.first_name }}",
+        "familyName": "{{ site.last_name }}",
+        "url": "{{ site.url }}",
+        "image": "{{ site.url }}/assets/img/prof_pic.webp",
+        "jobTitle": "Senior Applied Scientist",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Amazon Web Services",
+            "url": "https://aws.amazon.com/"
+        },
+        "alumniOf": [
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "National University of Singapore",
+                "url": "https://www.nus.edu.sg/"
+            },
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "Indian Institute of Technology Roorkee",
+                "url": "https://www.iitr.ac.in/"
+            }
+        ],
+        "knowsAbout": [
+            "Machine Learning",
+            "Time Series Forecasting",
+            "Generative Models",
+            "Probabilistic Modeling",
+            "Deep Learning"
+        ],
+        "award": [
+            "Dean's Graduate Research Excellence Award, NUS"
+        ],
+        "description": "{{ site.description }}",
+        {% if sameaslinks != blank -%}
+        "sameAs": {{ sameaslinks }}
+        {%- endif %}
+    }
+    </script>
 {%- endif %}
