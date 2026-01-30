@@ -22,4 +22,6 @@ Hallo! I am Fatir, a Machine Learning Scientist at Amazon Web Services (AWS) bas
 
 **Previously**: I graduated with a **PhD in Computer Science** from [NUS School of Computing](https://www.comp.nus.edu.sg/) where I was advised by Prof. [Harold Soh](https://haroldsoh.github.io) and received the _Dean’s Graduate Research Excellence Award_ for my PhD research. Prior to that, I obtained my bachelor's degree in Civil Engineering from [IIT Roorkee](https://www.iitr.ac.in). During my undergrad years, I also participated in Google Summer of Code in 2016 and 2017.
 
+**Office hours**: I’m happy to chat about research with students or researchers. I’ve set aside Fridays, 4:00–4:30 PM (CET) for this; please reach out by email.
+
 **Contact**: abdulfatirs [at] gmail [dot] com
