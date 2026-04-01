@@ -11,32 +11,32 @@ Some poems that I have written in the past.
 
 ### the river, the moth, and me
 <h6 style="color:#828282">Mar 2026</h6>
-I asked the river
-Where does it flow to?
-With swift pace,
-Carving through the earth.
-She said that it’s her nature
-To lose herself in the ocean forever.
-
-I asked the moth
-Why does it seek the lamp?
-From dark, far away groves,
-For a glimpse of the light.
-He said that it’s his destiny
-To lose himself in the flame forever.
-
-The river and the moth then asked me
-Where are you headed?
-But I know not,
-For I already lost myself in you.
+I asked the river    
+Where does it flow to?    
+With swift pace,    
+Carving through the earth.    
+She said that it’s her nature    
+To lose herself in the ocean forever.    
+    
+I asked the moth    
+Why does it seek the lamp?    
+From dark, far away groves,    
+For a glimpse of the light.    
+He said that it’s his destiny    
+To lose himself in the flame forever.    
+    
+The river and the moth then asked me    
+Where are you headed?    
+But I know not,    
+For I already lost myself in you.    
 
 ### last light
 <h6 style="color:#828282">Mar 2026</h6>
-When the last streak of the sun
-Melts into the arms of the night
-When the city sleeps in silence
-And the last light is quenched
-I think of you.
+When the last streak of the sun    
+Melts into the arms of the night    
+When the city sleeps in silence    
+And the last light is quenched    
+I think of you.    
 
 ### of longing and belonging
 <h6 style="color:#828282">Jul 2022</h6>
